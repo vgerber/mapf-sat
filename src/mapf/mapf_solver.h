@@ -12,13 +12,14 @@ namespace mapf {
  *
  */
 struct SearchNode {
-  GraphNode *node = nullptr;
+  GraphNodePtr node = nullptr;
   float f = std::numeric_limits<float>()
                 .max(); // Cost based on cost function (e.g. distance to target)
   float g = 0.0f;       // Cost based of num nodes visited
-  SearchNode *parent = nullptr;
-  std::vector<SearchNode *> successors;
+  std::shared_ptr<SearchNode> parent = nullptr;
+  std::vector<std::shared_ptr<SearchNode>> successors;
 };
+typedef std::shared_ptr<SearchNode> SearchNodePtr;
 
 /**
  * @brief Decoded MAPF CNF Edge/Vertex
@@ -26,18 +27,18 @@ struct SearchNode {
  */
 struct MAPFNode {
   int agent = -1;
-  int x1, y1;
-  int x2, y2;
-  int t1, t2;
+  CoordinateT x1, y1;
+  CoordinateT x2, y2;
+  size_t t1, t2;
   int vertex = -1;
   int edge = -1;
 
   void print() {
     if (agent != -1) {
       if (edge != -1) {
-        printf("e(%i,%i,%i,(%i,%i)->(%i,%i))", agent, t1, t2, x1, y1, x2, y2);
+        printf("e(%i,%lu,%lu,(%i,%i)->(%i,%i))", agent, t1, t2, x1, y1, x2, y2);
       } else {
-        printf("v(%i,%i,%i,%i)", agent, t1, x1, y1);
+        printf("v(%i,%lu,%i,%i)", agent, t1, x1, y1);
       }
     }
   }
@@ -52,45 +53,32 @@ public:
    *
    * @param graph
    */
-  void setGraph(Graph graph);
+  void set_graph(const GraphPtr graph);
 
-  /**
-   * @brief Solve path problem for given agents
-   *
-   * @param agents
-   * @return true
-   * @return false
-   */
-  bool solve(std::vector<Agent> &agents);
+  void register_agent(const MAPFAgentPtr agent);
 
-  bool isSolved();
+  bool solve();
 
-  int getSolvedT();
+  bool is_solved();
 
-  /**
-   * @brief Get the solution if problem is sat
-   *
-   * @return std::vector<MAPFAgent>
-   */
-  std::vector<MAPFAgent> getSolution();
+  int get_solved_time_constraint();
 
   /**
    * @brief Reads solution from solution.sat file (debug)
    *
    */
-  void readSolution();
+  void read_solution();
 
-  bool isMDDOptimized();
+  bool is_mdd_optimized();
 
-  void useMDDOptimization(bool optimize);
+  void use_mdd_optimization(bool optimize);
 
 private:
-  bool tegUseMDD = false;
-  std::unique_ptr<Glucose::Solver> satSolver; // SAT Solver
-  int maxT = 0;                  // maxT time steps for path problem
-  Graph graph;                   // Graph for problem search
-  std::vector<MAPFAgent> agents; // Agents on Graph
-  bool solved = false;
+  bool teg_use_mdd = false;
+  std::unique_ptr<Glucose::Solver> sat_solver; // SAT Solver
+  size_t max_t = 0;                 // max_t time steps for path problem
+  GraphPtr graph = nullptr;         // Graph for problem search
+  std::vector<MAPFAgentPtr> agents; // Agents on Graph
 
   /**
    * @brief Returns true if path for all agents is found
@@ -98,83 +86,44 @@ private:
    * @return true
    * @return false
    */
-  bool isSAT();
+  bool is_sat();
 
   /**
    * @brief Get the Path from start to end
    *
-   * @param startX
-   * @param startY
-   * @param endX
-   * @param endY
-   * @param maxLength
+   * @param start_x
+   * @param start_y
+   * @param end_x
+   * @param end_y
+   * @param max_length
    * @return std::vector<GraphNode*>
    */
-  std::vector<GraphNode *> getPath(int startX, int startY, int endX, int endY,
-                                   int maxLength = 50);
+  std::vector<GraphNodePtr> get_path(CoordinateT start_x, CoordinateT start_y,
+                                     CoordinateT end_x, CoordinateT end_y,
+                                     size_t max_length = 50);
 
-  /**
-   * @brief Get the Time Expansion Graph for te given path
-   *
-   * @param path
-   * @param maxT
-   * @return TimeExpansionGraph
-   */
-  TimeExpansionGraph getTimeExpansionGraph(std::vector<GraphNode *> path,
-                                           int maxT);
+  TimeExpansionGraph
+  get_time_expansion_graph(const std::vector<GraphNodePtr> &path, size_t max_t);
 
-  /**
-   * @brief Get the CNF encoding for maxT
-   *
-   * @param clauses
-   * @param variables
-   * @return std::string
-   */
-  std::string getCNFEncoding(int &clauses, int &variables);
+  std::string get_cnf_encoding(int &clauses, int &variables);
 
-  /**
-   * @brief Get the Vertex CNF Encoding
-   *
-   * @param agentIndex
-   * @param time
-   * @param pathIndex
-   * @param positive
-   * @return std::string
-   */
-  std::string getVertexEncoding(int agentIndex, int time, int pathIndex,
-                                bool positive = true);
+  std::string get_cnf_vertex_encoding(size_t agent_index, size_t time,
+                                      size_t path_index, bool positive = true);
 
-  /**
-   * @brief Get the Edge CNF Encoding
-   *
-   * @param agentIndex
-   * @param time
-   * @param nextTime
-   * @param pathIndex
-   * @param edgeIndex
-   * @param positive
-   * @return std::string
-   */
-  std::string getEdgeEncoding(int agentIndex, int time, int nextTime,
-                              int pathIndex, int edgeIndex,
-                              bool positive = true);
+  std::string get_cnf_edge_encoding(size_t agent_index, size_t time,
+                                    size_t next_time, size_t path_index,
+                                    size_t edge_index, bool positive = true);
 
-  /**
-   * @brief Get the Node from the CNF Encoding
-   *
-   * @param value
-   * @return MAPFNode
-   */
-  MAPFNode getNode(int value);
+  MAPFNode decode_cnf_node(int cnf_encoded_node);
 
   /**
    * @brief Tests if agent2 has the same vertex like agent
    *
    * @param agent
-   * @param pathIndex
+   * @param path_index
    * @param agent2
    * @return int
    */
-  int getVertex(int agent1, int time, int pathIndex, int agent2);
+  int get_vertex(int agent1, int time, int path_index, int agent2);
 };
 } // namespace mapf

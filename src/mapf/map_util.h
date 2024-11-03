@@ -1,40 +1,51 @@
 #pragma once
 
+#include <filesystem>
 #include <fstream>
+#include <memory>
 #include <string>
 #include <vector>
 
 namespace mapf {
+typedef int CoordinateT;
+
 struct Edge {
-  int fromX = 0;
-  int fromY = 0;
-  int toX = 0;
-  int toY = 0;
+  CoordinateT from_x = 0;
+  CoordinateT from_y = 0;
+  CoordinateT to_x = 0;
+  CoordinateT to_y = 0;
 };
 
 struct Map {
   std::string type = "";
-  int width = 0;
-  int height = 0;
+  CoordinateT width = 0;
+  CoordinateT height = 0;
   std::vector<int> vertices;
 
-  int get_vertex(size_t x, size_t y) const;
+  int get_vertex(CoordinateT x, CoordinateT y) const;
 };
+typedef std::shared_ptr<Map> MapPtr;
 
 struct GraphNode {
   int value = 0;
-  int x = 0;
-  int y = 0;
-  std::vector<GraphNode *> edges;
+  CoordinateT x = 0;
+  CoordinateT y = 0;
+  std::vector<std::shared_ptr<GraphNode>> edges;
 };
+typedef std::shared_ptr<GraphNode> GraphNodePtr;
 
 struct Graph {
-  std::vector<GraphNode *> nodes;
+  CoordinateT width = 0;
+  CoordinateT height = 0;
+  std::vector<GraphNodePtr> nodes;
 
-  GraphNode *get(int x, int y);
+  std::shared_ptr<GraphNode> get_node(CoordinateT x, CoordinateT y);
 };
+typedef std::shared_ptr<Graph> GraphPtr;
 
-Map loadMap(std::string path);
+MapPtr load_map(const std::filesystem::path &path);
 
-Graph getGraph(Map map);
+GraphPtr map_to_graph(const MapPtr map);
+
+CoordinateT get_distance(CoordinateT a, CoordinateT b);
 } // namespace mapf

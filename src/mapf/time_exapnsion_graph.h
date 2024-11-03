@@ -6,7 +6,7 @@
  *
  */
 struct TimeExpansionNode {
-  std::vector<unsigned int> edgeNodes;
+  std::vector<unsigned int> edge_nodes;
 };
 
 /**

@@ -49,8 +49,7 @@ void MAPFMap::load_map_into_tile_map() {
 
 void MAPFMap::load_map(String map_path) {
 
-  this->loaded_map =
-      std::make_shared<mapf::Map>(mapf::loadMap(map_path.ascii().get_data()));
+  this->loaded_map = mapf::load_map(map_path.ascii().get_data());
 
   if (!this->loaded_map) {
     UtilityFunctions::print("Map load failed, clearing tile map");

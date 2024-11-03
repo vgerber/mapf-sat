@@ -31,8 +31,8 @@ void MAPFAgent::set_cell(const Vector2i &cell) {
 }
 
 void MAPFAgent::set_target_cell(const Vector2i &cell) {
-  agent->targetX = cell.x;
-  agent->targetY = cell.y;
+  agent->target_x = cell.x;
+  agent->target_y = cell.y;
 }
 
 void MAPFAgent::set_cell_size(const Vector2i &cell_size) {
@@ -40,7 +40,10 @@ void MAPFAgent::set_cell_size(const Vector2i &cell_size) {
   set_position(Vector2i(agent->x, agent->y) * cell_size);
 }
 
-void MAPFAgent::reset_path_state() { path_index = 0; }
+void MAPFAgent::reset_path_state() {
+  path_index = 0;
+  emit_signal(SIGNAL_PATH_CHANGED);
+}
 
 size_t MAPFAgent::get_path_length() const { return agent->path.size(); }
 
@@ -53,7 +56,7 @@ Vector2i MAPFAgent::get_path_cell(size_t path_index) const {
   return Vector2i(path_node->x, path_node->y);
 }
 
-void MAPFAgent::set_path(const std::vector<mapf::GraphNode *> path) {
+void MAPFAgent::set_path(std::vector<mapf::GraphNodePtr> path) {
   agent->path = path;
   emit_signal(SIGNAL_PATH_CHANGED);
 }
@@ -68,7 +71,7 @@ void MAPFAgent::_process(float delta) {
   }
 
   const float speed = 200;
-  const mapf::GraphNode *next_node = agent->path[path_index];
+  const mapf::GraphNodePtr next_node = agent->path[path_index];
   const Vector2i next_position =
       Vector2i(next_node->x, next_node->y) * cell_size;
 
@@ -84,7 +87,7 @@ void MAPFAgent::_process(float delta) {
     path_index++;
 
     if (path_index < agent->path.size()) {
-      const mapf::GraphNode *next_node = agent->path[path_index];
+      const mapf::GraphNodePtr next_node = agent->path[path_index];
       const Vector2i next_position =
           Vector2i(next_node->x, next_node->y) * cell_size;
       UtilityFunctions::print("Go to (", next_position.x, ",", next_position.y,

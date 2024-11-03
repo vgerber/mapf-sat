@@ -2,15 +2,17 @@
 
 namespace mapf {
 
-int MAPFAgent::hasVertex(GraphNode *node, int t) {
-  int index = 0;
-  for (auto pathNode : desiredPath) {
-    if (node->x == pathNode->x && node->y == pathNode->y) {
+std::optional<size_t>
+MAPFAgent::get_vertex_index_at_time_step(const GraphNodePtr node,
+                                         size_t t) const {
+  size_t index = 0;
+  for (auto path_node : desired_path) {
+    if (node->x == path_node->x && node->y == path_node->y) {
       return index;
     }
     index++;
   }
-  return -1;
+  return std::nullopt;
 }
 
 } // namespace mapf

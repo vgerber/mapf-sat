@@ -15,40 +15,27 @@ MAPFSolver::MAPFSolver() {}
 MAPFSolver::~MAPFSolver() {}
 
 void MAPFSolver::set_map(MAPFMap *map) {
-  solver.setGraph(mapf::getGraph(*map->get_map_handle()));
+  solver.set_graph(mapf::map_to_graph(map->get_map_handle()));
 }
 
-void MAPFSolver::add_agent(MAPFAgent *agent) { agents.push_back(agent); }
+void MAPFSolver::add_agent(MAPFAgent *agent) {
+  agents.push_back(agent);
+  solver.register_agent(agent->get_agent_handle());
+}
 
 void MAPFSolver::solve() {
-  std::vector<mapf::Agent> agent_handles = {};
-  for (const auto &agent : agents) {
-    agent_handles.push_back(*agent->get_agent_handle());
-  }
-  bool solved = solver.solve(agent_handles);
+  bool solved = solver.solve();
   UtilityFunctions::print("Solver result ", solved);
 
   if (!solved) {
     return;
   }
 
-  UtilityFunctions::print("Updating ", agent_handles.size(), " agents");
-  if (solver.getSolution().size() != agents.size()) {
-    UtilityFunctions::printerr("Solution does not match to agents ",
-                               agent_handles.size(), " vs ",
-                               solver.getSolution().size());
-    return;
-  }
-
-  for (size_t agent_index = 0; agent_index < agent_handles.size();
-       agent_index++) {
+  for (size_t agent_index = 0; agent_index < agents.size(); agent_index++) {
     UtilityFunctions::print("Updating agent  ", agent_index);
-    const mapf::MAPFAgent updated_agent = solver.getSolution()[agent_index];
-    MAPFAgent *agent = agents[agent_index];
-    agent->set_path(updated_agent.path);
-    agent->get_agent_handle()->teg = updated_agent.teg;
+    auto agent = agents[agent_index];
 
-    for (auto path : updated_agent.path) {
+    for (auto path : agent->get_agent_handle()->path) {
       UtilityFunctions::print(path->x, ",", path->y);
     }
 

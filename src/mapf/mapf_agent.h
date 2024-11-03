@@ -1,6 +1,7 @@
 #pragma once
 #include "map_util.h"
 #include "time_exapnsion_graph.h"
+#include <optional>
 
 namespace mapf {
 
@@ -9,8 +10,9 @@ namespace mapf {
  *
  */
 struct Agent {
-  int x, y, targetX, targetY;
+  size_t x, y, target_x, target_y;
 };
+typedef std::shared_ptr<Agent> AgentPtr;
 
 /**
  * @brief Agent which contains a path from start to end
@@ -21,20 +23,15 @@ struct Agent {
  */
 struct MAPFAgent : public Agent {
   TimeExpansionGraph teg;
-  std::vector<GraphNode *> desiredPath;
-  std::vector<GraphNode *> path;
+  std::vector<GraphNodePtr> desired_path;
+  std::vector<GraphNodePtr> path;
 
   // cnf encoding offsets
   int variables = 0;
 
-  /**
-   * @brief Returns index if teg has the same node at timestep t
-   *
-   * @param node
-   * @param t
-   * @return int index if found or -1 if not
-   */
-  int hasVertex(GraphNode *node, int t);
+  std::optional<size_t> get_vertex_index_at_time_step(const GraphNodePtr node,
+                                                      size_t t) const;
 };
+typedef std::shared_ptr<MAPFAgent> MAPFAgentPtr;
 
 } // namespace mapf

@@ -10,7 +10,7 @@ class MAPFMap : public Node2D {
 
 private:
   TileMapLayer *tile_map_layer = nullptr;
-  std::shared_ptr<mapf::Map> loaded_map = nullptr;
+  mapf::MapPtr loaded_map = nullptr;
 
   void load_map_into_tile_map();
 

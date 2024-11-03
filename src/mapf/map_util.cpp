@@ -2,108 +2,128 @@
 
 namespace mapf {
 
-GraphNode *Graph::get(int x, int y) {
-  for (int i = 0; i < nodes.size(); i++) {
-    if (nodes[i]->x == x && nodes[i]->y == y) {
-      return nodes[i];
-    }
+GraphNodePtr Graph::get_node(CoordinateT x, CoordinateT y) {
+  if (x >= width || y >= height || x < 0 || y < 0) {
+    return nullptr;
   }
-  return nullptr;
+  return nodes[y * width + x];
 }
 
-int Map::get_vertex(size_t x, size_t y) const {
+int Map::get_vertex(CoordinateT x, CoordinateT y) const {
   if (x >= width || y >= height) {
     return -1;
   }
   return vertices[x * width + y];
 }
 
-Map loadMap(std::string path) {
-  std::fstream mapFile(path, std::fstream::in);
-
-  Map outputMap;
-
-  if (mapFile.good()) {
-    std::string line;
-    bool mapStart = false;
-    int row = 0;
-    while (std::getline(mapFile, line)) {
-      if (!mapStart) {
-        for (int i = 0; i < line.size(); i++) {
-          if (line[i] == ' ') {
-            std::string type = line.substr(0, i);
-            std::string value = line.substr(i + 1, line.size() - (i + 1));
-            if (type == "type") {
-              outputMap.type = value;
-            } else if (type == "height") {
-              outputMap.height = std::stoi(value);
-            } else if (type == "width") {
-              outputMap.width = std::stoi(value);
-            }
-          } else if (line == "map") {
-            outputMap.vertices =
-                std::vector<int>(outputMap.width * outputMap.height);
-            mapStart = true;
-          }
-        }
-      } else {
-        for (int i = 0; i < line.size(); i++) {
-          int value = 0;
-          switch (line[i]) {
-          case 'T':
-            value = 1;
-            break;
-          case '.':
-            value = 0;
-            break;
-          case '@':
-            value = -1;
-            break;
-          default:
-            break;
-          }
-
-          outputMap.vertices[outputMap.width * row + i] = value;
-        }
-        row++;
-      }
-    }
-  } else {
-    printf("Can't open file %s\n", path.c_str());
+void parse_map_header_line(const MapPtr output_map,
+                           const std::string &file_line,
+                           bool &is_map_start_line) {
+  if (file_line == "map") {
+    output_map->vertices =
+        std::vector<int>(output_map->width * output_map->height);
+    is_map_start_line = true;
+    return;
   }
-  return outputMap;
+
+  for (int line_position = 0; line_position < file_line.size();
+       line_position++) {
+    // search for ' ' split delimeter and parse property
+    if (file_line[line_position] != ' ') {
+      continue;
+    }
+    std::string type = file_line.substr(0, line_position);
+    std::string value = file_line.substr(
+        line_position + 1, file_line.size() - (line_position + 1));
+    if (type == "type") {
+      output_map->type = value;
+    } else if (type == "height") {
+      output_map->height = std::stoi(value);
+    } else if (type == "width") {
+      output_map->width = std::stoi(value);
+    }
+  }
 }
 
-Graph getGraph(Map map) {
-  const unsigned int dMax = 04;
-  int dxKernel[dMax] = {0, 1, 0, -1};
-  int dyKernel[dMax] = {1, 0, -1, 0};
+MapPtr load_map(const std::filesystem::path &path) {
+  std::fstream map_file(path, std::fstream::in);
 
-  std::vector<GraphNode *> nodes;
+  MapPtr output_map = std::make_shared<Map>();
 
-  for (int y = 0; y < map.width; y++) {
-    for (int x = 0; x < map.height; x++) {
-      if (map.vertices[y * map.width + x] == 0) {
-        GraphNode *node = new GraphNode();
-        node->value = 0;
-        node->x = x;
-        node->y = y;
-        for (int k = std::max(y - 1 * map.width, 0); k < nodes.size(); k++) {
-          GraphNode *graphNode = nodes[k];
-          if (abs(graphNode->x - x) == 1 && abs(graphNode->y - y) == 0) {
-            node->edges.push_back(graphNode);
-            graphNode->edges.push_back(node);
-          } else if (abs(graphNode->y - y) == 1 && abs(graphNode->x - x) == 0) {
-            node->edges.push_back(graphNode);
-            graphNode->edges.push_back(node);
-          }
+  if (!map_file.good()) {
+    printf("Can't open file %s\n", path.c_str());
+    return nullptr;
+  }
+
+  std::string line;
+  bool map_start = false;
+  size_t row = 0;
+  while (std::getline(map_file, line)) {
+    if (!map_start) {
+      parse_map_header_line(output_map, line, map_start);
+    } else {
+      for (size_t line_position = 0; line_position < line.size();
+           line_position++) {
+        int value = 0;
+        switch (line[line_position]) {
+        case 'T':
+          value = 1;
+          break;
+        case '.':
+          value = 0;
+          break;
+        case '@':
+          value = -1;
+          break;
+        default:
+          break;
         }
-        nodes.push_back(node);
+
+        output_map->vertices[output_map->width * row + line_position] = value;
+      }
+      row++;
+    }
+  }
+  return output_map;
+}
+
+CoordinateT get_distance(CoordinateT a, CoordinateT b) {
+  return std::abs(a - b);
+}
+
+GraphPtr map_to_graph(const MapPtr map) {
+
+  GraphPtr graph = std::make_shared<Graph>();
+  graph->nodes = std::vector<GraphNodePtr>(map->height * map->width);
+  graph->width = map->width;
+  graph->height = map->height;
+
+  for (size_t y = 0; y < map->height; y++) {
+    for (size_t x = 0; x < map->width; x++) {
+      const int node_index = y * map->width + x;
+      GraphNodePtr node = std::make_shared<GraphNode>();
+      node->value = map->get_vertex(x, y);
+      node->x = x;
+      node->y = y;
+      graph->nodes[y * map->width + x] = node;
+
+      if (node->value != 0) {
+        continue;
+      }
+
+      auto top_node = graph->get_node(x, y - 1);
+      if (top_node && top_node->value == 0) {
+        node->edges.push_back(top_node);
+        top_node->edges.push_back(node);
+      }
+      auto left_node = graph->get_node(x - 1, y);
+      if (left_node && left_node->value == 0) {
+        node->edges.push_back(left_node);
+        left_node->edges.push_back(node);
       }
     }
   }
-  Graph graph;
-  graph.nodes = nodes;
+
   return graph;
 }
 } // namespace mapf

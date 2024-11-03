@@ -11,7 +11,7 @@ var solver = MAPFSolver.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#mapf_map.load_map("/home/vincent/Development/Godot/gdextension_test/demo/assets/pssai/mouse1.map")
-	map_view.load_map("/home/vincent/Development/Godot/mapf_sat/viewer/assets/maps/dao-map/arena.map")
+	map_view.load_map("/home/vincent/Development/Godot/mapf_sat/viewer/assets/maps/basic/mouse1.map")
 	var mapf_map = map_view.mapf_map
 	solver.set_map(mapf_map)
 	
