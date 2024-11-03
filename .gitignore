@@ -3,3 +3,4 @@
 *.so
 extension_api.json
 .sconsign.dblite
+*.cnf
