@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b422dxv6s8wch"]
+
+[ext_resource type="Script" path="res://scenes/map_view/map_view.gd" id="1_780yg"]
+[ext_resource type="TileSet" uid="uid://cl5aiqaux0fmj" path="res://assets/ground_tileset.tres" id="3_07wj1"]
+[ext_resource type="Texture2D" uid="uid://bnqr6gxw6qj0a" path="res://assets/cursor/cursor_select.png" id="3_tkrye"]
+
+[node name="MapView" type="Node"]
+script = ExtResource("1_780yg")
+
+[node name="MAPFMap" type="MAPFMap" parent="."]
+tile_set = ExtResource("3_07wj1")
+
+[node name="CursorPosition" type="Sprite2D" parent="."]
+texture = ExtResource("3_tkrye")
+centered = false
+
+[node name="FreeCamera" type="Camera2D" parent="."]

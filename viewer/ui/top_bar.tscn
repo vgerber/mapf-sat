@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf06cvn5bvnmc"]
+
+[ext_resource type="Script" path="res://ui/top_bar.gd" id="1_jvbnu"]
+
+[node name="TopBar" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 51.0
+grow_horizontal = 2
+script = ExtResource("1_jvbnu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Agent" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Agent"
+
+[node name="AgentSelectBtn" type="OptionButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="AddAgentBtn" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Add Agent"
+
+[node name="CameraLbl" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Camera"
+
+[node name="CameraSelectBtn" type="OptionButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="SolveBtn" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Solve"
+
+[connection signal="item_selected" from="MarginContainer/HBoxContainer/CameraSelectBtn" to="." method="_on_camera_select_btn_item_selected"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SolveBtn" to="." method="_on_solve_btn_pressed"]

@@ -1,0 +1,1469 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="/home/vincent/bitmap.png"
+   inkscape:export-xdpi="3175"
+   inkscape:export-ydpi="3175"
+   inkscape:version="1.1.1 (3bf5ae0, 2021-09-20)"
+   sodipodi:docname="ground_tileset.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="6.7122207"
+     inkscape:cx="31.882146"
+     inkscape:cy="45.886453"
+     inkscape:window-width="1478"
+     inkscape:window-height="699"
+     inkscape:window-x="301"
+     inkscape:window-y="409"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+       id="rect846"
+       width="1"
+       height="1"
+       x="4.4420385"
+       y="5.1794629"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175" />
+    <g
+       id="g6392"
+       transform="translate(0.14052582,0.92978716)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3"
+         width="1"
+         height="1"
+         x="4.3015127"
+         y="3.249676" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6"
+         width="1"
+         height="0.2"
+         x="4.3015127"
+         y="3.249676" />
+    </g>
+    <g
+       id="g6392-2"
+       transform="rotate(90,4.4068819,5.2848326)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37"
+         width="1"
+         height="1"
+         x="4.3015127"
+         y="3.249676" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59"
+         width="1"
+         height="0.2"
+         x="4.3015127"
+         y="3.249676" />
+    </g>
+    <g
+       id="g6930"
+       transform="translate(-1.0193601,-1.0925417)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-7"
+         width="1"
+         height="1"
+         x="7.2720046"
+         y="-8.4613991"
+         transform="rotate(90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3"
+         width="0.2"
+         height="0.2"
+         x="7.2720046"
+         y="-8.4613991"
+         transform="rotate(90)" />
+    </g>
+    <g
+       id="g6930-2"
+       transform="rotate(-90,7.4054482,7.2354138)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-7-9"
+         width="1"
+         height="1"
+         x="7.2720046"
+         y="-8.4613991"
+         transform="rotate(90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3"
+         width="0.2"
+         height="0.2"
+         x="7.2720046"
+         y="-8.4613991"
+         transform="rotate(90)" />
+    </g>
+    <g
+       id="g6930-1"
+       transform="rotate(180,7.9517191,6.7257338)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-7-94"
+         width="1"
+         height="1"
+         x="7.2720046"
+         y="-8.4613991"
+         transform="rotate(90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-7"
+         width="0.2"
+         height="0.2"
+         x="7.2720046"
+         y="-8.4613991"
+         transform="rotate(90)" />
+    </g>
+    <g
+       id="g6930-8"
+       transform="rotate(90,8.4979899,6.2160537)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-7-4"
+         width="1"
+         height="1"
+         x="7.2720046"
+         y="-8.4613991"
+         transform="rotate(90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-5"
+         width="0.2"
+         height="0.2"
+         x="7.2720046"
+         y="-8.4613991"
+         transform="rotate(90)" />
+    </g>
+    <g
+       id="g6392-2-2"
+       transform="rotate(-90,5.3366694,5.1443066)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-2"
+         width="1"
+         height="1"
+         x="4.3015127"
+         y="3.249676" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8"
+         width="1"
+         height="0.2"
+         x="4.3015127"
+         y="3.249676" />
+    </g>
+    <g
+       id="g7352"
+       transform="translate(-2.8688583,-0.00881185)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-2-3"
+         width="1"
+         height="1"
+         x="-6.1882749"
+         y="11.310897"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6"
+         width="1"
+         height="0.2"
+         x="-6.1882749"
+         y="11.310897"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-1"
+         width="1"
+         height="0.2"
+         x="-6.1882749"
+         y="12.110897"
+         transform="rotate(-90)" />
+    </g>
+    <g
+       id="g7352-0"
+       transform="rotate(90,11.880874,4.7494397)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-2-3-6"
+         width="1"
+         height="1"
+         x="-6.1882749"
+         y="11.310897"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-15"
+         width="1"
+         height="0.2"
+         x="-6.1882749"
+         y="11.310897"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-1-5"
+         width="1"
+         height="0.2"
+         x="-6.1882749"
+         y="12.110897"
+         transform="rotate(-90)" />
+    </g>
+    <g
+       id="g7347"
+       transform="translate(-2.3128523,1.2058991)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-2-3-0"
+         width="1"
+         height="1"
+         x="-3.9735632"
+         y="10.754891"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-6"
+         width="1"
+         height="0.2"
+         x="-3.9735632"
+         y="10.754891"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-6-2"
+         width="1"
+         height="0.2"
+         x="-3.9735632"
+         y="11.554892"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-1-3"
+         width="1"
+         height="0.2"
+         x="10.754891"
+         y="2.9735632" />
+    </g>
+    <g
+       id="g7347-4"
+       transform="rotate(90,10.995515,4.4200866)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-2-3-0-7"
+         width="1"
+         height="1"
+         x="-3.9735632"
+         y="10.754891"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-6-6"
+         width="1"
+         height="0.2"
+         x="-3.9735632"
+         y="10.754891"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-6-2-5"
+         width="1"
+         height="0.2"
+         x="-3.9735632"
+         y="11.554892"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-1-3-6"
+         width="1"
+         height="0.2"
+         x="10.754891"
+         y="2.9735632" />
+    </g>
+    <g
+       id="g7347-9"
+       transform="rotate(180,10.098465,5.0765131)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-2-3-0-3"
+         width="1"
+         height="1"
+         x="-3.9735632"
+         y="10.754891"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-6-7"
+         width="1"
+         height="0.2"
+         x="-3.9735632"
+         y="10.754891"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-6-2-4"
+         width="1"
+         height="0.2"
+         x="-3.9735632"
+         y="11.554892"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-1-3-5"
+         width="1"
+         height="0.2"
+         x="10.754891"
+         y="2.9735632" />
+    </g>
+    <g
+       id="g7347-2"
+       transform="rotate(-90,11.201415,4.7329395)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-2-3-0-5"
+         width="1"
+         height="1"
+         x="-3.9735632"
+         y="10.754891"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-6-4"
+         width="1"
+         height="0.2"
+         x="-3.9735632"
+         y="10.754891"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-6-2-7"
+         width="1"
+         height="0.2"
+         x="-3.9735632"
+         y="11.554892"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-8-6-1-3-4"
+         width="1"
+         height="0.2"
+         x="10.754891"
+         y="2.9735632" />
+    </g>
+    <g
+       id="g6396"
+       transform="translate(-1.6827712,3.056933)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-7"
+         width="1"
+         height="1"
+         x="6.1248097"
+         y="3.1225302" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-5"
+         width="1"
+         height="0.2"
+         x="6.1248097"
+         y="3.9225299" />
+    </g>
+    <g
+       id="g6401"
+       transform="translate(0.6933043,-0.28944397)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-3"
+         width="1"
+         height="1"
+         x="2.7487342"
+         y="4.4689069" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56"
+         width="1"
+         height="0.2"
+         x="2.7487342"
+         y="4.4689069" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56-2"
+         width="1"
+         height="0.2"
+         x="4.4689069"
+         y="-2.9487343"
+         transform="rotate(90)" />
+    </g>
+    <g
+       id="g6401-6"
+       transform="rotate(90,4.7401084,6.170837)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-3-1"
+         width="1"
+         height="1"
+         x="2.7487342"
+         y="4.4689069" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56-8"
+         width="1"
+         height="0.2"
+         x="2.7487342"
+         y="4.4689069" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56-2-7"
+         width="1"
+         height="0.2"
+         x="4.4689069"
+         y="-2.9487343"
+         transform="rotate(90)" />
+    </g>
+    <g
+       id="g6383"
+       transform="rotate(-90,3.522633,5.4279565)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-3-9"
+         width="1"
+         height="1"
+         x="1.7711265"
+         y="5.347362" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56-1"
+         width="1"
+         height="0.2"
+         x="1.7711265"
+         y="5.347362" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56-2-2"
+         width="1"
+         height="0.2"
+         x="5.347362"
+         y="-1.9711266"
+         transform="rotate(90)" />
+    </g>
+    <g
+       id="g6388"
+       transform="translate(-0.21882486,-0.11408043)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-3-7"
+         width="1"
+         height="1"
+         x="-6.6608634"
+         y="-7.2935433"
+         transform="scale(-1)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56-0"
+         width="1"
+         height="0.2"
+         x="-6.6608634"
+         y="-7.2935433"
+         transform="scale(-1)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56-2-9"
+         width="1"
+         height="0.2"
+         x="-7.2935433"
+         y="6.4608631"
+         transform="rotate(-90)" />
+    </g>
+    <g
+       id="g6408"
+       transform="translate(-1.6122437,-1.072398)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-3-3"
+         width="1"
+         height="1"
+         x="8.0542822"
+         y="5.2518611" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56-6"
+         width="1"
+         height="0.2"
+         x="8.0542822"
+         y="5.2518611" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56-6-6"
+         width="1"
+         height="0.2"
+         x="5.2518611"
+         y="-9.0542822"
+         transform="rotate(90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56-6-2"
+         width="1"
+         height="0.2"
+         x="8.0542822"
+         y="6.0518613" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-56-2-0"
+         width="1"
+         height="0.2"
+         x="5.2518611"
+         y="-8.254283"
+         transform="rotate(90)" />
+    </g>
+    <g
+       id="g8150"
+       transform="translate(0.02041919,-5.1282383)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <g
+         id="g7793">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8"
+           width="1"
+           height="1"
+           x="10.307701"
+           y="-10.421619"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6"
+           width="1"
+           height="0.2"
+           x="10.307701"
+           y="-10.421619"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0"
+           width="0.2"
+           height="0.2"
+           x="9.4216194"
+           y="10.307701" />
+      </g>
+      <g
+         id="g7782"
+         transform="translate(0.19339561,-0.30757427)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8-8"
+           width="1"
+           height="1"
+           x="12.615275"
+           y="-10.228224"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6-8"
+           width="1"
+           height="0.2"
+           x="12.615275"
+           y="-10.228224"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-4"
+           width="0.2"
+           height="0.2"
+           x="9.2282238"
+           y="13.415276" />
+      </g>
+      <g
+         id="g7788"
+         transform="translate(0.28189754,-0.14869499)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8-3"
+           width="1"
+           height="1"
+           x="11.456396"
+           y="-10.139722"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6-1"
+           width="1"
+           height="0.2"
+           x="11.456396"
+           y="-10.139722"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-49"
+           width="0.2"
+           height="0.2"
+           x="9.1397219"
+           y="11.456396" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-49-2"
+           width="0.2"
+           height="0.2"
+           x="9.1397219"
+           y="12.256396" />
+      </g>
+    </g>
+    <g
+       id="g8105"
+       transform="translate(-5.0522039,-4.0985695)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <g
+         id="g7793-0"
+         transform="rotate(90,11.472765,13.329179)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8-6"
+           width="1"
+           height="1"
+           x="10.307701"
+           y="-10.421619"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6-89"
+           width="1"
+           height="0.2"
+           x="10.307701"
+           y="-10.421619"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-2"
+           width="0.2"
+           height="0.2"
+           x="9.4216194"
+           y="10.307701" />
+      </g>
+      <g
+         id="g7782-6"
+         transform="rotate(90,11.529855,13.579664)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8-8-6"
+           width="1"
+           height="1"
+           x="12.615275"
+           y="-10.228224"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6-8-4"
+           width="1"
+           height="0.2"
+           x="12.615275"
+           y="-10.228224"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-4-9"
+           width="0.2"
+           height="0.2"
+           x="9.2282238"
+           y="13.415276" />
+      </g>
+      <g
+         id="g7788-5"
+         transform="rotate(90,11.406164,13.544475)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8-3-0"
+           width="1"
+           height="1"
+           x="11.456396"
+           y="-10.139722"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6-1-4"
+           width="1"
+           height="0.2"
+           x="11.456396"
+           y="-10.139722"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-49-8"
+           width="0.2"
+           height="0.2"
+           x="9.1397219"
+           y="11.456396" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-49-2-7"
+           width="0.2"
+           height="0.2"
+           x="9.1397219"
+           y="12.256396" />
+      </g>
+    </g>
+    <g
+       id="g8135"
+       transform="translate(-6.1809176,-5.7226778)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <g
+         id="g7793-0-4"
+         transform="rotate(180,13.522287,12.104921)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8-6-9"
+           width="1"
+           height="1"
+           x="10.307701"
+           y="-10.421619"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6-89-0"
+           width="1"
+           height="0.2"
+           x="10.307701"
+           y="-10.421619"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-2-9"
+           width="0.2"
+           height="0.2"
+           x="9.4216194"
+           y="10.307701" />
+      </g>
+      <g
+         id="g7782-6-1"
+         transform="rotate(180,13.42559,12.258708)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8-8-6-7"
+           width="1"
+           height="1"
+           x="12.615275"
+           y="-10.228224"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6-8-4-7"
+           width="1"
+           height="0.2"
+           x="12.615275"
+           y="-10.228224"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-4-9-11"
+           width="0.2"
+           height="0.2"
+           x="9.2282238"
+           y="13.415276" />
+      </g>
+      <g
+         id="g7788-5-5"
+         transform="rotate(180,13.381339,12.179268)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8-3-0-9"
+           width="1"
+           height="1"
+           x="11.456396"
+           y="-10.139722"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6-1-4-7"
+           width="1"
+           height="0.2"
+           x="11.456396"
+           y="-10.139722"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-49-8-7"
+           width="0.2"
+           height="0.2"
+           x="9.1397219"
+           y="11.456396" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-49-2-7-6"
+           width="0.2"
+           height="0.2"
+           x="9.1397219"
+           y="12.256396" />
+      </g>
+    </g>
+    <g
+       id="g8384"
+       transform="translate(0.64316355,-5.822698)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-8-6-9-6"
+         width="1"
+         height="1"
+         x="-12.002161"
+         y="10.798875"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-6-89-0-5"
+         width="1"
+         height="0.2"
+         x="-12.002161"
+         y="10.798875"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-6-89-0-5-0"
+         width="1"
+         height="0.2"
+         x="10.798875"
+         y="11.002161" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-0-2-9-6"
+         width="0.2"
+         height="0.2"
+         x="-11.798875"
+         y="-12.002161"
+         transform="scale(-1)" />
+    </g>
+    <g
+       id="g8384-8"
+       transform="rotate(90,15.031806,9.4123938)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-8-6-9-6-8"
+         width="1"
+         height="1"
+         x="-12.002161"
+         y="10.798875"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-6-89-0-5-5"
+         width="1"
+         height="0.2"
+         x="-12.002161"
+         y="10.798875"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-6-89-0-5-0-0"
+         width="1"
+         height="0.2"
+         x="10.798875"
+         y="11.002161" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-0-2-9-6-9"
+         width="0.2"
+         height="0.2"
+         x="-11.798875"
+         y="-12.002161"
+         transform="scale(-1)" />
+    </g>
+    <g
+       id="g8384-6"
+       transform="rotate(180,12.120457,9.090812)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-8-6-9-6-3"
+         width="1"
+         height="1"
+         x="-12.002161"
+         y="10.798875"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-6-89-0-5-8"
+         width="1"
+         height="0.2"
+         x="-12.002161"
+         y="10.798875"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-6-89-0-5-0-5"
+         width="1"
+         height="0.2"
+         x="10.798875"
+         y="11.002161" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-0-2-9-6-6"
+         width="0.2"
+         height="0.2"
+         x="-11.798875"
+         y="-12.002161"
+         transform="scale(-1)" />
+    </g>
+    <g
+       id="g8384-1"
+       transform="rotate(-90,9.2091078,8.7692302)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-8-6-9-6-1"
+         width="1"
+         height="1"
+         x="-12.002161"
+         y="10.798875"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-6-89-0-5-59"
+         width="1"
+         height="0.2"
+         x="-12.002161"
+         y="10.798875"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-6-89-0-5-0-8"
+         width="1"
+         height="0.2"
+         x="10.798875"
+         y="11.002161" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-0-2-9-6-4"
+         width="0.2"
+         height="0.2"
+         x="-11.798875"
+         y="-12.002161"
+         transform="scale(-1)" />
+    </g>
+    <g
+       id="g8120"
+       transform="translate(-9.7644996,-7.2191091)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <g
+         id="g7793-0-1"
+         transform="rotate(-90,13.859514,10.960677)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8-6-7"
+           width="1"
+           height="1"
+           x="10.307701"
+           y="-10.421619"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6-89-2"
+           width="1"
+           height="0.2"
+           x="10.307701"
+           y="-10.421619"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-2-7"
+           width="0.2"
+           height="0.2"
+           x="9.4216194"
+           y="10.307701" />
+      </g>
+      <g
+         id="g7782-6-2"
+         transform="rotate(-90,13.609029,11.017767)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8-8-6-2"
+           width="1"
+           height="1"
+           x="12.615275"
+           y="-10.228224"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6-8-4-6"
+           width="1"
+           height="0.2"
+           x="12.615275"
+           y="-10.228224"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-4-9-1"
+           width="0.2"
+           height="0.2"
+           x="9.2282238"
+           y="13.415276" />
+      </g>
+      <g
+         id="g7788-5-0"
+         transform="rotate(-90,13.644218,10.894076)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-8-3-0-6"
+           width="1"
+           height="1"
+           x="11.456396"
+           y="-10.139722"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-6-1-4-1"
+           width="1"
+           height="0.2"
+           x="11.456396"
+           y="-10.139722"
+           transform="rotate(90)" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-49-8-5"
+           width="0.2"
+           height="0.2"
+           x="9.1397219"
+           y="11.456396" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-0-49-2-7-9"
+           width="0.2"
+           height="0.2"
+           x="9.1397219"
+           y="12.256396" />
+      </g>
+    </g>
+    <g
+       id="g8594"
+       transform="translate(-1.4145241,-5.7741235)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-7-9-1"
+         width="1"
+         height="1"
+         x="8.8565626"
+         y="9.9535866" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-03"
+         width="0.2"
+         height="0.2"
+         x="8.8565626"
+         y="9.9535866" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-03-0"
+         width="0.2"
+         height="0.2"
+         x="9.6565628"
+         y="9.9535866" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-03-4"
+         width="0.2"
+         height="0.2"
+         x="9.6565628"
+         y="10.753587" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-03-44"
+         width="0.2"
+         height="0.2"
+         x="8.8565626"
+         y="10.753587" />
+    </g>
+    <g
+       id="g9651"
+       transform="translate(-9.0491552,-2.3505825)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <g
+         id="g9096"
+         transform="translate(2.6890821,0.14737034)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-7-9-1-7"
+           width="1"
+           height="1"
+           x="10.802112"
+           y="10.382675" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-6"
+           width="0.2"
+           height="0.2"
+           x="10.802112"
+           y="10.382675" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-4-1"
+           width="0.2"
+           height="0.2"
+           x="11.602112"
+           y="11.182675" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-44-7"
+           width="0.2"
+           height="0.2"
+           x="10.802112"
+           y="11.182675" />
+      </g>
+      <g
+         id="g9114">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-7-9-1-9"
+           width="1"
+           height="1"
+           x="12.491194"
+           y="10.530046" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-0-1"
+           width="0.2"
+           height="0.2"
+           x="13.291194"
+           y="10.530046" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-4-7"
+           width="0.2"
+           height="0.2"
+           x="13.291194"
+           y="11.330046" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-44-8"
+           width="0.2"
+           height="0.2"
+           x="12.491194"
+           y="11.330046" />
+      </g>
+      <g
+         id="g9102"
+         transform="translate(1.8137789,-0.39434242)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-7-9-1-4"
+           width="1"
+           height="1"
+           x="10.677415"
+           y="11.924388" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-1"
+           width="0.2"
+           height="0.2"
+           x="10.677415"
+           y="11.924388" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-0-8"
+           width="0.2"
+           height="0.2"
+           x="11.477415"
+           y="11.924388" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-4-5"
+           width="0.2"
+           height="0.2"
+           x="11.477415"
+           y="12.724388" />
+      </g>
+      <g
+         id="g9108"
+         transform="translate(1.1813774,-0.25830936)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-7-9-1-5"
+           width="1"
+           height="1"
+           x="12.309816"
+           y="11.788355" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-3"
+           width="0.2"
+           height="0.2"
+           x="12.309816"
+           y="11.788355" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-0-88"
+           width="0.2"
+           height="0.2"
+           x="13.109817"
+           y="11.788355" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-44-1"
+           width="0.2"
+           height="0.2"
+           x="12.309816"
+           y="12.588355" />
+      </g>
+    </g>
+    <g
+       id="g10555"
+       transform="translate(-1.1068578,-0.41384644)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-7-9-1-7-4"
+         width="1"
+         height="1"
+         x="9.5488968"
+         y="8.5933104" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-03-6-8"
+         width="0.2"
+         height="0.2"
+         x="9.5488968"
+         y="8.5933104" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-03-4-1-1"
+         width="0.2"
+         height="0.2"
+         x="10.348897"
+         y="9.3933105" />
+      <rect
+         style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect846-3-37-7-9-1-9-9"
+         width="1"
+         height="1"
+         x="8.5488968"
+         y="8.5933113" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-03-0-1-3"
+         width="0.2"
+         height="0.2"
+         x="9.348897"
+         y="8.5933113" />
+      <rect
+         style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect5567-6-59-3-3-03-44-8-0"
+         width="0.2"
+         height="0.2"
+         x="8.5488968"
+         y="9.3933105" />
+    </g>
+    <g
+       id="g9629"
+       transform="translate(-11.600691,-2.4280864)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/ground_texture.png"
+       inkscape:export-xdpi="3175"
+       inkscape:export-ydpi="3175">
+      <g
+         id="g9611">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-7-9-1-7-9"
+           width="1"
+           height="1"
+           x="17.04273"
+           y="10.607549" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-6-6"
+           width="0.2"
+           height="0.2"
+           x="17.04273"
+           y="10.607549" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-44-7-3"
+           width="0.2"
+           height="0.2"
+           x="17.04273"
+           y="11.407549" />
+      </g>
+      <g
+         id="g9606"
+         transform="translate(2)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-7-9-1-9-3"
+           width="1"
+           height="1"
+           x="16.04273"
+           y="10.60755" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-0-1-8"
+           width="0.2"
+           height="0.2"
+           x="16.84273"
+           y="10.60755" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-4-7-6"
+           width="0.2"
+           height="0.2"
+           x="16.84273"
+           y="11.407549" />
+      </g>
+      <g
+         id="g9601"
+         transform="rotate(180,17.04273,12.107549)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-7-9-1-4-8"
+           width="1"
+           height="1"
+           x="16.04273"
+           y="11.607549" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-1-8"
+           width="0.2"
+           height="0.2"
+           x="16.04273"
+           y="11.607549" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-0-8-8"
+           width="0.2"
+           height="0.2"
+           x="16.84273"
+           y="11.607549" />
+      </g>
+      <g
+         id="g9596"
+         transform="translate(1)">
+        <rect
+           style="fill:#554e46;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect846-3-37-7-9-1-5-7"
+           width="1"
+           height="1"
+           x="17.04273"
+           y="11.607549" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-3-6"
+           width="0.2"
+           height="0.2"
+           x="17.04273"
+           y="11.607549" />
+        <rect
+           style="fill:#34302b;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect5567-6-59-3-3-03-0-88-4"
+           width="0.2"
+           height="0.2"
+           x="17.84273"
+           y="11.607549" />
+      </g>
+    </g>
+  </g>
+</svg>

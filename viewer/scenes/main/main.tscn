@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://o8s72wve2lyl"]
+
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_acn7r"]
+[ext_resource type="PackedScene" uid="uid://b422dxv6s8wch" path="res://scenes/map_view/map_view.tscn" id="3_e5y7j"]
+[ext_resource type="PackedScene" uid="uid://cf06cvn5bvnmc" path="res://ui/top_bar.tscn" id="4_2bsid"]
+[ext_resource type="Texture2D" uid="uid://bnqr6gxw6qj0a" path="res://assets/cursor/cursor_select.png" id="4_5eudh"]
+[ext_resource type="Texture2D" uid="uid://nc58km6vhosm" path="res://assets/cursor/cursor_navigate.png" id="5_uf783"]
+[ext_resource type="Texture2D" uid="uid://du5i6kvvnvs46" path="res://assets/cursor/cursor_add.png" id="6_k3n0d"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_acn7r")
+
+[node name="Control" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TopBar" parent="Control" instance=ExtResource("4_2bsid")]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer"]
+handle_input_locally = false
+physics_object_picking = true
+size = Vector2i(1152, 607)
+render_target_update_mode = 4
+
+[node name="MapView" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("3_e5y7j")]
+cursor_select_texture = ExtResource("4_5eudh")
+cursor_navigate_texture = ExtResource("5_uf783")
+cursor_place_texture = ExtResource("6_k3n0d")
+
+[connection signal="add_agent" from="Control/TopBar" to="." method="_on_top_bar_add_agent"]
+[connection signal="solve_click" from="Control/TopBar" to="." method="_on_top_bar_solve_click"]
