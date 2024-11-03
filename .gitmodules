@@ -1,0 +1,7 @@
+[submodule "godot-cpp"]
+	path = godot-cpp
+	url = git@github.com:godotengine/godot-cpp
+	branch = 4.3
+[submodule "glucose"]
+	path = glucose
+	url = git@github.com:audemard/glucose.git
