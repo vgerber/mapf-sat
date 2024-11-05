@@ -53,8 +53,8 @@ bool MAPFSolver::solve() {
 
     // create TEGs
     for (const auto &agent : this->agents) {
-      std::cout << "Get Agent TEG " << agent.get() << std::endl;
-      std::cout << "DesiredPath=" << agent->desired_path.size() << std::endl;
+      std::cout << "Agent DesiredPathLength=" << agent->desired_path.size()
+                << std::endl;
       agent->teg = get_time_expansion_graph(agent->desired_path, max_t);
     }
 
@@ -87,33 +87,11 @@ int MAPFSolver::get_solved_time_constraint() { return max_t; }
 bool MAPFSolver::is_sat() {
 
   // encode problem to cnf
-  int clauses = 0;
-  int variables = 0;
-  std::string cnf = get_cnf_encoding(clauses, variables);
-  printf("Generated CNF Agents=%lu Clauses=%i Variables=%i\n", agents.size(),
-         clauses, variables);
-
-  // write cnf to .cnf file
-  std::string cnf_file = "";
-  cnf_file += "c MAPF Encoding\n";
-  cnf_file += "p cnf " + std::to_string(variables) + " " +
-              std::to_string(clauses) + "\n";
-  cnf_file += cnf;
-
-  std::fstream cnf_file_stream("mapf.cnf", std::fstream::out);
-  if (cnf_file_stream.good()) {
-    cnf_file_stream << cnf_file;
-  }
-  cnf_file_stream.close();
-
-  // read cnf file and solve with glucose sat solver
   sat_solver = std::make_unique<Glucose::Solver>();
+  encode_to_sat_solver();
 
-  gzFile in = gzopen("mapf.cnf", "rb");
-  Glucose::parse_DIMACS(in, *sat_solver);
-  gzclose(in);
-
-  // sat_solver.eliminate(true);
+  printf("Generated CNF Agents=%lu Clauses=%i Variables=%i\n", agents.size(),
+         sat_solver->nClauses(), sat_solver->nVars());
 
   Glucose::vec<Glucose::Lit> dummy;
   Glucose::lbool sat_solver_is_sat = sat_solver->solveLimited(dummy);
@@ -252,7 +230,7 @@ MAPFSolver::get_path(CoordinateT start_x, CoordinateT start_y,
               [](SearchNodePtr a, SearchNodePtr b) { return a->f < b->f; });
   }
   if (!solution_found) {
-    printf("No path found (%i,%i)-(%i,%i)", start_x, start_y, end_x, end_y);
+    printf("No path found (%i,%i)-(%i,%i)\n", start_x, start_y, end_x, end_y);
     return {};
   }
   SearchNodePtr path_node = unexplored[0];
@@ -307,11 +285,14 @@ TimeExpansionGraph MAPFSolver::get_time_expansion_graph(
   return teg;
 }
 
-std::string MAPFSolver::get_cnf_encoding(int &clauses, int &variables) {
-  variables = 0;
-  clauses = 0;
-  std::string cnf = "";
+Glucose::Lit MAPFSolver::add_new_var(const Glucose::Lit &lit) {
+  while ((sat_solver->nVars() - 1) < abs(lit.x)) {
+    sat_solver->newVar();
+  }
+  return lit;
+}
 
+void MAPFSolver::encode_to_sat_solver() {
   // calculate agent dimensions
   for (auto &agent : agents) {
     // calculate agent offset
@@ -320,8 +301,6 @@ std::string MAPFSolver::get_cnf_encoding(int &clauses, int &variables) {
       agent->variables += agent->teg.teg[i].size();
       agent->variables += agent->teg.edges[i];
     }
-
-    variables += agent->variables;
   }
 
   // encode for each agent
@@ -330,11 +309,12 @@ std::string MAPFSolver::get_cnf_encoding(int &clauses, int &variables) {
 
     // RULE 0
     // start and end node
-    cnf += get_cnf_vertex_encoding(agent_index, 0, 0) + " 0\n";
-    cnf += get_cnf_vertex_encoding(agent_index, max_t - 1,
-                                   agent->desired_path.size() - 1) +
-           " 0\n";
-    clauses += 2;
+    sat_solver->addClause(
+        add_new_var(get_cnf_vertex_encoding(agent_index, 0, 0)));
+
+    sat_solver->addClause(add_new_var(get_cnf_vertex_encoding(
+        agent_index, max_t - 1, agent->desired_path.size() - 1)));
+
     for (int t = 0; t < max_t; t++) {
 
       for (int v = 0; v < agent->teg.teg[t].size(); v++) {
@@ -344,9 +324,9 @@ std::string MAPFSolver::get_cnf_encoding(int &clauses, int &variables) {
           if (v2 == v) {
             continue;
           }
-          cnf += get_cnf_vertex_encoding(agent_index, t, v, false) + " " +
-                 get_cnf_vertex_encoding(agent_index, t, v2, false) + " 0\n";
-          clauses++;
+          sat_solver->addClause(
+              add_new_var(get_cnf_vertex_encoding(agent_index, t, v, false)),
+              add_new_var(get_cnf_vertex_encoding(agent_index, t, v2, false)));
         }
 
         if (t < max_t - 1) {
@@ -355,13 +335,14 @@ std::string MAPFSolver::get_cnf_encoding(int &clauses, int &variables) {
 
           // RULE 1 a)
           // each agent has to leave his edge in the next time step
-          cnf += get_cnf_vertex_encoding(agent_index, t, v, false);
-
-          for (int e = 0; e < agent->teg.teg[t][v].edge_nodes.size(); e++) {
-            cnf += " " + get_cnf_edge_encoding(agent_index, t, t + 1, v, e);
+          Clause clause(agent->teg.teg[t][v].edge_nodes.size() + 1);
+          clause[0] =
+              add_new_var(get_cnf_vertex_encoding(agent_index, t, v, false));
+          for (int e = 0; e < clause.size(); e++) {
+            clause[e + 1] =
+                add_new_var(get_cnf_edge_encoding(agent_index, t, t + 1, v, e));
           }
-          cnf += " 0\n";
-          clauses++;
+          sat_solver->addClause(clause);
 
           // RULE 1 b)
           // each agent can only traverse one edge at the time
@@ -371,13 +352,10 @@ std::string MAPFSolver::get_cnf_encoding(int &clauses, int &variables) {
               if (e1 == e2) {
                 continue;
               }
-              cnf +=
-                  get_cnf_edge_encoding(agent_index, t, t + 1, v, e1, false) +
-                  " " +
-                  get_cnf_edge_encoding(agent_index, t, t + 1, v, e2, false) +
-                  " 0\n";
-
-              clauses++;
+              sat_solver->addClause(add_new_var(get_cnf_edge_encoding(
+                                        agent_index, t, t + 1, v, e1, false)),
+                                    add_new_var(get_cnf_edge_encoding(
+                                        agent_index, t, t + 1, v, e2, false)));
             }
           }
 
@@ -385,13 +363,14 @@ std::string MAPFSolver::get_cnf_encoding(int &clauses, int &variables) {
           // edge e is blocked if agent i moves from x/y -> x'/y'
           for (int e = 0; e < agent->teg.teg[t][v].edge_nodes.size(); e++) {
             int v2 = agent->teg.teg[t][v].edge_nodes[e];
-            std::string edge_encoding =
-                get_cnf_edge_encoding(agent_index, t, t + 1, v, e, false);
-            cnf += edge_encoding + " " +
-                   get_cnf_vertex_encoding(agent_index, t, v) + " 0\n";
-            cnf += edge_encoding + " " +
-                   get_cnf_vertex_encoding(agent_index, t + 1, v2) + " 0\n";
-            clauses += 2;
+            Glucose::Lit edge_encoding = add_new_var(
+                get_cnf_edge_encoding(agent_index, t, t + 1, v, e, false));
+            sat_solver->addClause(
+                edge_encoding,
+                add_new_var(get_cnf_vertex_encoding(agent_index, t, v)));
+            sat_solver->addClause(
+                edge_encoding,
+                add_new_var(get_cnf_vertex_encoding(agent_index, t + 1, v2)));
           }
 
           // RULE 4
@@ -407,21 +386,20 @@ std::string MAPFSolver::get_cnf_encoding(int &clauses, int &variables) {
               continue;
             }
 
-            cnf += get_cnf_vertex_encoding(a, t, *agent_vertex_index, false) +
-                   " " + get_cnf_vertex_encoding(agent_index, t, v, false) +
-                   " 0\n";
-            clauses += 1;
+            sat_solver->addClause(
+                add_new_var(
+                    get_cnf_vertex_encoding(a, t, *agent_vertex_index, false)),
+                add_new_var(get_cnf_vertex_encoding(agent_index, t, v, false)));
           }
         }
       }
     }
   }
-  return cnf;
 }
 
-std::string MAPFSolver::get_cnf_vertex_encoding(size_t agent_index, size_t time,
-                                                size_t path_index,
-                                                bool positive) {
+Glucose::Lit MAPFSolver::get_cnf_vertex_encoding(size_t agent_index,
+                                                 size_t time, size_t path_index,
+                                                 bool positive) {
   MAPFAgentPtr agent = agents[agent_index];
   // add offset for cnf encoding
   int value = 1;
@@ -439,14 +417,14 @@ std::string MAPFSolver::get_cnf_vertex_encoding(size_t agent_index, size_t time,
   // add vertex offset
   value += path_index;
 
-  return std::to_string(positive ? value : -value);
+  return positive ? Glucose::mkLit(value) : ~Glucose::mkLit(value);
 }
 
-std::string MAPFSolver::get_cnf_edge_encoding(size_t agent_index, size_t time,
-                                              size_t nextTime,
-                                              size_t path_index,
-                                              size_t edge_index,
-                                              bool positive) {
+Glucose::Lit MAPFSolver::get_cnf_edge_encoding(size_t agent_index, size_t time,
+                                               size_t nextTime,
+                                               size_t path_index,
+                                               size_t edge_index,
+                                               bool positive) {
   MAPFAgentPtr agent = agents[agent_index];
   // add offset for cnf encoding
   int value = 1;
@@ -470,7 +448,8 @@ std::string MAPFSolver::get_cnf_edge_encoding(size_t agent_index, size_t time,
   }
   value += edge_index;
 
-  return std::to_string(positive ? value : -value);
+  return positive ? Glucose::mkLit(value) : ~Glucose::mkLit(value);
+  ;
 }
 
 MAPFNode MAPFSolver::decode_cnf_node(int value) {

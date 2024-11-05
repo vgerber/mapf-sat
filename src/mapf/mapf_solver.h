@@ -80,6 +80,9 @@ private:
   GraphPtr graph = nullptr;         // Graph for problem search
   std::vector<MAPFAgentPtr> agents; // Agents on Graph
 
+  typedef Glucose::vec<Glucose::Lit> Clause;
+  typedef std::vector<Clause> Clauses;
+
   /**
    * @brief Returns true if path for all agents is found
    *
@@ -105,14 +108,15 @@ private:
   TimeExpansionGraph
   get_time_expansion_graph(const std::vector<GraphNodePtr> &path, size_t max_t);
 
-  std::string get_cnf_encoding(int &clauses, int &variables);
+  inline Glucose::Lit add_new_var(const Glucose::Lit &lit);
+  void encode_to_sat_solver();
 
-  std::string get_cnf_vertex_encoding(size_t agent_index, size_t time,
-                                      size_t path_index, bool positive = true);
+  Glucose::Lit get_cnf_vertex_encoding(size_t agent_index, size_t time,
+                                       size_t path_index, bool positive = true);
 
-  std::string get_cnf_edge_encoding(size_t agent_index, size_t time,
-                                    size_t next_time, size_t path_index,
-                                    size_t edge_index, bool positive = true);
+  Glucose::Lit get_cnf_edge_encoding(size_t agent_index, size_t time,
+                                     size_t next_time, size_t path_index,
+                                     size_t edge_index, bool positive = true);
 
   MAPFNode decode_cnf_node(int cnf_encoded_node);
 
