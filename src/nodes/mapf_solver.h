@@ -25,7 +25,6 @@ public:
 
   void set_map(MAPFMap *map);
   void add_agent(MAPFAgent *agent);
-  //   MAPFAgents get_agents() const;
 
   void solve();
 };

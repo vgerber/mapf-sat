@@ -4,6 +4,7 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 
 const char *SIGNAL_PATH_CHANGED = "path_changed";
+const char *SIGNAL_PATH_INDEX_CHANGED = "path_index_changed";
 
 namespace godot {
 
@@ -18,7 +19,11 @@ void MAPFAgent::_bind_methods() {
                        &MAPFAgent::get_path_length);
   ClassDB::bind_method(D_METHOD("get_path_cell", "path_index"),
                        &MAPFAgent::get_path_cell);
+  ClassDB::bind_method(D_METHOD("get_current_path_index"),
+                       &MAPFAgent::get_current_path_index);
   ADD_SIGNAL(MethodInfo(SIGNAL_PATH_CHANGED));
+  ADD_SIGNAL(MethodInfo(SIGNAL_PATH_INDEX_CHANGED,
+                        PropertyInfo(Variant::INT, "path_index")));
 }
 
 MAPFAgent::MAPFAgent() { agent = std::make_shared<mapf::MAPFAgent>(); }
@@ -56,6 +61,8 @@ Vector2i MAPFAgent::get_path_cell(size_t path_index) const {
   return Vector2i(path_node->x, path_node->y);
 }
 
+int MAPFAgent::get_current_path_index() const { return path_index; }
+
 void MAPFAgent::set_path(std::vector<mapf::GraphNodePtr> path) {
   agent->path = path;
   emit_signal(SIGNAL_PATH_CHANGED);
@@ -90,8 +97,11 @@ void MAPFAgent::_process(float delta) {
       const mapf::GraphNodePtr next_node = agent->path[path_index];
       const Vector2i next_position =
           Vector2i(next_node->x, next_node->y) * cell_size;
-      UtilityFunctions::print("Go to (", next_position.x, ",", next_position.y,
-                              ") ", next_position.distance_to(get_position()));
+      // UtilityFunctions::print("Go to (", next_position.x, ",",
+      // next_position.y,
+      //                         ") ",
+      //                         next_position.distance_to(get_position()));
+      emit_signal(SIGNAL_PATH_INDEX_CHANGED, path_index);
     }
   }
 }

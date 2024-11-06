@@ -2,12 +2,16 @@
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
 
+const char *SIGNAL_SOLVER_FINISHED = "solver_finished";
+
 namespace godot {
 
 void MAPFSolver::_bind_methods() {
   ClassDB::bind_method(D_METHOD("solve"), &MAPFSolver::solve);
   ClassDB::bind_method(D_METHOD("add_agent", "agent"), &MAPFSolver::add_agent);
   ClassDB::bind_method(D_METHOD("set_map", "map"), &MAPFSolver::set_map);
+  ADD_SIGNAL(MethodInfo(SIGNAL_SOLVER_FINISHED,
+                        PropertyInfo(Variant::BOOL, "solved")));
 }
 
 MAPFSolver::MAPFSolver() {}
@@ -25,20 +29,14 @@ void MAPFSolver::add_agent(MAPFAgent *agent) {
 
 void MAPFSolver::solve() {
   bool solved = solver.solve();
-  UtilityFunctions::print("Solver result ", solved);
+
+  emit_signal(SIGNAL_SOLVER_FINISHED, solved);
 
   if (!solved) {
     return;
   }
 
-  for (size_t agent_index = 0; agent_index < agents.size(); agent_index++) {
-    UtilityFunctions::print("Updating agent  ", agent_index);
-    auto agent = agents[agent_index];
-
-    for (auto path : agent->get_agent_handle()->path) {
-      UtilityFunctions::print(path->x, ",", path->y);
-    }
-
+  for (const auto &agent : agents) {
     agent->reset_path_state();
   }
 }

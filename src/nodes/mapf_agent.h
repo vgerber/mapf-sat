@@ -28,6 +28,7 @@ public:
 
   size_t get_path_length() const;
   Vector2i get_path_cell(size_t path_index) const;
+  int get_current_path_index() const;
   void set_path(std::vector<mapf::GraphNodePtr> path);
 
   std::shared_ptr<mapf::MAPFAgent> get_agent_handle() const;
