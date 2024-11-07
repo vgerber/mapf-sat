@@ -9,6 +9,9 @@
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0, 2021-09-20)"
    sodipodi:docname="assets.svg"
+   inkscape:export-filename="/home/vincent/Development/Godot/mapf_sat/viewer/assets/cursor/cursor_navigate.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,19 +26,354 @@
      inkscape:pagecheckerboard="1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.68862935"
-     inkscape:cx="396.43968"
-     inkscape:cy="561.98592"
-     inkscape:window-width="2560"
-     inkscape:window-height="1337"
-     inkscape:window-x="2560"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:zoom="1.860897"
+     inkscape:cx="404.64357"
+     inkscape:cy="156.3762"
+     inkscape:window-width="1478"
+     inkscape:window-height="699"
+     inkscape:window-x="3132"
+     inkscape:window-y="369"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
      id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1" />
+     id="layer1">
+    <g
+       id="g2440"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/cursor_select.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <g
+         id="g2204"
+         transform="translate(-0.97703171,-41.611786)">
+        <rect
+           style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970"
+           width="7.9375"
+           height="3.96875"
+           x="13.006721"
+           y="48.359486" />
+        <rect
+           style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-3"
+           width="7.9375"
+           height="3.96875"
+           x="-56.296986"
+           y="13.006721"
+           transform="rotate(-90)" />
+      </g>
+      <g
+         id="g2204-7"
+         transform="rotate(180,29.054664,44.090052)">
+        <rect
+           style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-5"
+           width="7.9375"
+           height="3.96875"
+           x="13.006721"
+           y="48.359486" />
+        <rect
+           style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-3-3"
+           width="7.9375"
+           height="3.96875"
+           x="-56.296986"
+           y="13.006721"
+           transform="rotate(-90)" />
+      </g>
+      <g
+         id="g2204-7-5"
+         transform="rotate(90,49.860557,43.601536)">
+        <rect
+           style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-5-6"
+           width="7.9375"
+           height="3.96875"
+           x="13.006721"
+           y="48.359486" />
+        <rect
+           style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-3-3-2"
+           width="7.9375"
+           height="3.96875"
+           x="-56.296986"
+           y="13.006721"
+           transform="rotate(-90)" />
+      </g>
+      <g
+         id="g2204-7-5-9"
+         transform="rotate(-90,8.2487707,44.578568)">
+        <rect
+           style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-5-6-1"
+           width="7.9375"
+           height="3.96875"
+           x="13.006721"
+           y="48.359486" />
+        <rect
+           style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-3-3-2-2"
+           width="7.9375"
+           height="3.96875"
+           x="-56.296986"
+           y="13.006721"
+           transform="rotate(-90)" />
+      </g>
+    </g>
+    <g
+       id="g7244"
+       transform="translate(-5.487339,-4.4644636)"
+       inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/cursor_add.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <g
+         id="g2204-9"
+         transform="translate(45.743105,-37.168787)"
+         style="fill:#2b4a7c;fill-opacity:1">
+        <rect
+           style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-36"
+           width="7.9375"
+           height="3.96875"
+           x="13.006721"
+           y="48.359486" />
+        <rect
+           style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-3-0"
+           width="7.9375"
+           height="3.96875"
+           x="-56.296986"
+           y="13.006721"
+           transform="rotate(-90)" />
+      </g>
+      <g
+         id="g2788"
+         style="fill:#2b4a7c;fill-opacity:1"
+         transform="translate(-0.79229838,0.69934209)">
+        <g
+           id="g2204-9-2"
+           transform="translate(61.087493,-23.316045)"
+           style="fill:#2b4a7c;fill-opacity:1">
+          <rect
+             style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-36-3"
+             width="7.9375"
+             height="3.96875"
+             x="13.006721"
+             y="48.359486" />
+          <rect
+             style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-3-0-7"
+             width="7.9375"
+             height="3.96875"
+             x="-56.296986"
+             y="13.006721"
+             transform="rotate(-90)" />
+        </g>
+        <g
+           id="g2204-9-5"
+           transform="rotate(180,45.534843,38.685838)"
+           style="fill:#2b4a7c;fill-opacity:1">
+          <rect
+             style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-36-9"
+             width="7.9375"
+             height="3.96875"
+             x="13.006721"
+             y="48.359486" />
+          <rect
+             style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-3-0-2"
+             width="7.9375"
+             height="3.96875"
+             x="-56.296986"
+             y="13.006721"
+             transform="rotate(-90)" />
+        </g>
+      </g>
+      <g
+         id="g2204-7-6"
+         transform="rotate(180,52.414732,46.311552)"
+         style="fill:#2b4a7c;fill-opacity:1">
+        <rect
+           style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-5-2"
+           width="7.9375"
+           height="3.96875"
+           x="13.006721"
+           y="48.359486" />
+        <rect
+           style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-3-3-6"
+           width="7.9375"
+           height="3.96875"
+           x="-56.296986"
+           y="13.006721"
+           transform="rotate(-90)" />
+      </g>
+      <g
+         id="g2204-7-5-1"
+         transform="rotate(90,70.999126,69.183104)"
+         style="fill:#2b4a7c;fill-opacity:1">
+        <rect
+           style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-5-6-8"
+           width="7.9375"
+           height="3.96875"
+           x="13.006721"
+           y="48.359486" />
+        <rect
+           style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-3-3-2-7"
+           width="7.9375"
+           height="3.96875"
+           x="-56.296986"
+           y="13.006721"
+           transform="rotate(-90)" />
+      </g>
+      <g
+         id="g2204-7-5-9-9"
+         transform="rotate(-90,33.830339,23.439999)"
+         style="fill:#2b4a7c;fill-opacity:1">
+        <rect
+           style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-5-6-1-2"
+           width="7.9375"
+           height="3.96875"
+           x="13.006721"
+           y="48.359486" />
+        <rect
+           style="fill:#2b4a7c;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect970-3-3-2-2-0"
+           width="7.9375"
+           height="3.96875"
+           x="-56.296986"
+           y="13.006721"
+           transform="rotate(-90)" />
+      </g>
+    </g>
+    <g
+       id="g4513">
+      <g
+         id="g2440-2"
+         inkscape:export-filename="/home/vincent/Development/Godot/gdextension_test/demo/assets/cursor_select.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96"
+         transform="translate(90.999002,4.8157588)">
+        <g
+           id="g2204-8"
+           transform="translate(-0.97703171,-41.611786)">
+          <rect
+             style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-9"
+             width="7.9375"
+             height="3.96875"
+             x="13.006721"
+             y="48.359486" />
+          <rect
+             style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-3-7"
+             width="7.9375"
+             height="3.96875"
+             x="-56.296986"
+             y="13.006721"
+             transform="rotate(-90)" />
+        </g>
+        <g
+           id="g2204-7-3"
+           transform="rotate(180,29.054664,44.090052)">
+          <rect
+             style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-5-61"
+             width="7.9375"
+             height="3.96875"
+             x="13.006721"
+             y="48.359486" />
+          <rect
+             style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-3-3-29"
+             width="7.9375"
+             height="3.96875"
+             x="-56.296986"
+             y="13.006721"
+             transform="rotate(-90)" />
+        </g>
+        <g
+           id="g2204-7-5-3"
+           transform="rotate(90,49.860557,43.601536)">
+          <rect
+             style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-5-6-19"
+             width="7.9375"
+             height="3.96875"
+             x="13.006721"
+             y="48.359486" />
+          <rect
+             style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-3-3-2-4"
+             width="7.9375"
+             height="3.96875"
+             x="-56.296986"
+             y="13.006721"
+             transform="rotate(-90)" />
+        </g>
+        <g
+           id="g2204-7-5-9-7"
+           transform="rotate(-90,8.2487707,44.578568)">
+          <rect
+             style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-5-6-1-8"
+             width="7.9375"
+             height="3.96875"
+             x="13.006721"
+             y="48.359486" />
+          <rect
+             style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect970-3-3-2-2-4"
+             width="7.9375"
+             height="3.96875"
+             x="-56.296986"
+             y="13.006721"
+             transform="rotate(-90)" />
+        </g>
+      </g>
+      <rect
+         style="fill:#366a3e;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect970-6"
+         width="17.583035"
+         height="3.96875"
+         x="19.308401"
+         y="-118.55192"
+         transform="rotate(90)" />
+      <path
+         sodipodi:type="star"
+         style="fill:#2d5934;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="path7490"
+         inkscape:flatsided="false"
+         sodipodi:sides="3"
+         sodipodi:cx="423.22308"
+         sodipodi:cy="186.84781"
+         sodipodi:r1="25.772722"
+         sodipodi:r2="12.886362"
+         sodipodi:arg1="0"
+         sodipodi:arg2="1.0471976"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         transform="matrix(0.26458333,0,0,0.26458333,9.9836613,-24.222958)"
+         inkscape:transform-center-x="-1.7047568"
+         d="m 448.99581,186.84781 -19.32955,11.15992 -19.32954,11.15991 0,-22.31983 0,-22.31983 19.32955,11.15991 z" />
+    </g>
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+       id="path4400"
+       cx="37.47007"
+       cy="122.65601"
+       r="16.536459"
+       inkscape:export-filename="/home/vincent/Development/Godot/mapf_sat/viewer/world/entities/agent/assets/body.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
 </svg>

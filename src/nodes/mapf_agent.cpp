@@ -5,6 +5,7 @@
 
 const char *SIGNAL_PATH_CHANGED = "path_changed";
 const char *SIGNAL_PATH_INDEX_CHANGED = "path_index_changed";
+const char *SIGNAL_TARGET_CHANGED = "target_changed";
 
 namespace godot {
 
@@ -14,6 +15,10 @@ void MAPFAgent::_bind_methods() {
                        &MAPFAgent::set_cell_size);
   ClassDB::bind_method(D_METHOD("set_target_cell", "cell"),
                        &MAPFAgent::set_target_cell);
+  ClassDB::bind_method(D_METHOD("get_target_cell"),
+                       &MAPFAgent::get_target_cell);
+  ADD_PROPERTY(PropertyInfo(Variant::VECTOR2I, "target_cell"),
+               "set_target_cell", "get_target_cell");
 
   ClassDB::bind_method(D_METHOD("get_path_length"),
                        &MAPFAgent::get_path_length);
@@ -24,6 +29,8 @@ void MAPFAgent::_bind_methods() {
   ADD_SIGNAL(MethodInfo(SIGNAL_PATH_CHANGED));
   ADD_SIGNAL(MethodInfo(SIGNAL_PATH_INDEX_CHANGED,
                         PropertyInfo(Variant::INT, "path_index")));
+  ADD_SIGNAL(MethodInfo(SIGNAL_TARGET_CHANGED,
+                        PropertyInfo(Variant::VECTOR2I, "target")));
 }
 
 MAPFAgent::MAPFAgent() { agent = std::make_shared<mapf::MAPFAgent>(); }
@@ -38,6 +45,11 @@ void MAPFAgent::set_cell(const Vector2i &cell) {
 void MAPFAgent::set_target_cell(const Vector2i &cell) {
   agent->target_x = cell.x;
   agent->target_y = cell.y;
+  emit_signal(SIGNAL_TARGET_CHANGED, cell);
+}
+
+Vector2i MAPFAgent::get_target_cell() const {
+  return Vector2i(agent->target_x, agent->target_y);
 }
 
 void MAPFAgent::set_cell_size(const Vector2i &cell_size) {
@@ -47,7 +59,7 @@ void MAPFAgent::set_cell_size(const Vector2i &cell_size) {
 
 void MAPFAgent::reset_path_state() {
   path_index = 0;
-  emit_signal(SIGNAL_PATH_CHANGED);
+  emit_signal(SIGNAL_PATH_INDEX_CHANGED);
 }
 
 size_t MAPFAgent::get_path_length() const { return agent->path.size(); }

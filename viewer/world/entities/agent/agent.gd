@@ -3,14 +3,17 @@ extends MAPFAgent
 
 signal pressed
 
-@onready var camera = $Camera2D
+@onready var camera = $Camera
+@onready var body_sprite = $Body
+
+@export var color = Color(1, 1, 1)
 
 var path_mesh: MeshInstance2D = null
 var cell_size = Vector2i(125, 125)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	body_sprite.modulate = color
 
 func _input(event: InputEvent) -> void:
 	pass

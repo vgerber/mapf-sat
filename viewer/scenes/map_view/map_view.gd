@@ -5,6 +5,7 @@ signal agent_added(agent: Agent)
 
 const agent_scene = preload("res://world/entities/agent/agent.tscn")
 const agent_path_scene = preload("res://world/entities/agent/agent_path.tscn")
+const agent_path_target_scene = preload("res://world/entities/agent/target_location.tscn")
 
 enum MapAction { SELECT_AGENT = 0, NAVIGATE_AGENT = 1, PLACE_AGENT = 2 }
 
@@ -88,6 +89,7 @@ func fit_camera_to_scene() -> void:
 
 func add_agent_at_tile(cell: Vector2i) -> void:
 	var agent = agent_scene.instantiate() as Agent
+	agent.color = Color(clampf(randf(), 0.2, 0.8), clampf(randf(), 0.2, 0.8), clampf(randf(), 0.2, 0.8))
 	
 	agent.set_cell(cell)
 	agent.set_cell_size(mapf_map.get_tile_set().tile_size)
@@ -100,11 +102,21 @@ func add_agent_at_tile(cell: Vector2i) -> void:
 	agent_path.z_index = 2
 	mapf_map.add_child(agent_path)
 	
+	var agent_target = agent_path_target_scene.instantiate() as TargetLocation
+	agent_target.color = agent.color
+	agent_target.hide()
+	mapf_map.add_child(agent_target)
+	
 	agent.pressed.connect(func(): _on_agent_pressed(agent))
+	agent.target_changed.connect(func(target: Vector2i): _on_agent_target_changed(agent, agent_target))
 	
 	selected_agent = agent
 	_set_current_action(MapAction.NAVIGATE_AGENT)
 	
+func _on_agent_target_changed(agent: Agent, target: TargetLocation):
+	var target_position = (Vector2(agent.target_cell) + Vector2(0.5, 0.5)) * Vector2(agent.cell_size)
+	target.position = target_position
+	target.show()
 
 func load_map(path: String) -> void:
 	mapf_map.load_map(path)

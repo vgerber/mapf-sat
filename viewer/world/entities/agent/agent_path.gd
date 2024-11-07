@@ -9,6 +9,7 @@ var assigned_agent: MAPFAgent = null:
 	set(agent):
 		assigned_agent = agent
 		assigned_agent.path_changed.connect(on_path_update)
+		assigned_agent.path_index_changed.connect(func(path_index): on_path_update())
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,12 +27,12 @@ func _process(delta: float) -> void:
 
 func on_path_update() -> void:
 	print("Path changed %s" % assigned_agent.get_path_length())
-	if assigned_agent.get_path_length() < 2:
+	if assigned_agent.get_path_length() < 2 or assigned_agent.get_current_path_index() == assigned_agent.get_path_length() - 1:
 		return
 		
 	var surface_tool = SurfaceTool.new()
 	surface_tool.begin(Mesh.PRIMITIVE_LINE_STRIP)
-	for path_index in range(assigned_agent.get_path_length()):
+	for path_index in range(assigned_agent.get_current_path_index(), assigned_agent.get_path_length()):
 		var path_position = assigned_agent.get_path_cell(path_index) * cell_size 
 		surface_tool.set_color(Color(1.0, 1.0, 1.0))
 		surface_tool.add_vertex(Vector3(path_position.x, path_position.y, 0))

@@ -23,6 +23,7 @@ public:
 
   void set_cell(const Vector2i &cell);
   void set_target_cell(const Vector2i &cell);
+  Vector2i get_target_cell() const;
   void set_cell_size(const Vector2i &cell_size);
   void reset_path_state();
 
