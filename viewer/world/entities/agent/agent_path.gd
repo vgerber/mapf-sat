@@ -26,7 +26,6 @@ func _process(delta: float) -> void:
 	pass
 
 func on_path_update() -> void:
-	print("Path changed %s" % assigned_agent.get_path_length())
 	if assigned_agent.get_path_length() < 2 or assigned_agent.get_current_path_index() == assigned_agent.get_path_length() - 1:
 		return
 		
