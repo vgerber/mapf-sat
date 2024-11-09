@@ -8,19 +8,38 @@ radius = 64.5019
 
 [node name="MAPFAgent" type="MAPFAgent"]
 script = ExtResource("1_qnmnf")
-color = Color(0.750221, 0.290485, 0.329598, 1)
 
 [node name="Body" type="Sprite2D" parent="."]
-texture = ExtResource("2_epvyc")
-centered = false
-
-[node name="Camera" type="Camera2D" parent="."]
-offset = Vector2(60, 60)
-
-[node name="ClickArea" type="Area2D" parent="."]
-
-[node name="BodyShape" type="CollisionShape2D" parent="ClickArea"]
+modulate = Color(0.886275, 0.337255, 0.384314, 1)
 position = Vector2(62.5, 62.5)
+texture = ExtResource("2_epvyc")
+
+[node name="Camera" type="Camera2D" parent="Body"]
+position = Vector2(-62.5, -62.5)
+
+[node name="NameLbl" type="Label" parent="Body"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -131.0
+offset_right = 18.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+theme_override_font_sizes/font_size = 57
+text = "Agent"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickArea" type="Area2D" parent="Body"]
+
+[node name="BodyShape" type="CollisionShape2D" parent="Body/ClickArea"]
 shape = SubResource("CircleShape2D_156aq")
 
-[connection signal="input_event" from="ClickArea" to="." method="_on_collision_area_input_event"]
+[connection signal="renamed" from="." to="." method="_on_renamed"]
+[connection signal="input_event" from="Body/ClickArea" to="." method="_on_collision_area_input_event"]

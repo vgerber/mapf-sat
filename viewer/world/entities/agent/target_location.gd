@@ -1,13 +1,19 @@
 class_name TargetLocation
 extends Node2D
 
-@export var color = Color(1,1,1, 0.1)
+func assign_agent(agent: Agent) -> void:
+	$PathTarget.modulate = agent.body.modulate
+	agent.target_changed.connect(func(target: Vector2i): _on_agent_target_changed(target, agent.cell_size))
+	agent.path_index_changed.connect(func(path_index: int): _on_agent_path_changed(agent))
+	agent.path_changed.connect(func(): _on_agent_path_changed(agent))
+	$PathTarget/AgentNameLbl.text = agent.name
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$PathTarget.modulate = color
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_agent_target_changed(target: Vector2i, cell_size: Vector2i) -> void:
+	position = (Vector2(target) + Vector2(0.5, 0.5)) * Vector2(cell_size)
+	show()
+	
+func _on_agent_path_changed(agent: Agent):
+	if agent.get_current_path_index() == max(0, agent.get_path_length()-1):
+		hide()
+		return
+	show()

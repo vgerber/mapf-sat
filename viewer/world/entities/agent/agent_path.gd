@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 
 func on_path_update() -> void:
 	if assigned_agent.get_path_length() < 2 or assigned_agent.get_current_path_index() == assigned_agent.get_path_length() - 1:
+		path_mesh.mesh = null
 		return
 		
 	var surface_tool = SurfaceTool.new()

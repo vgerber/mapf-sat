@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp0dt166bm53d"]
+
+[ext_resource type="Texture2D" uid="uid://ttnapf2s7cui" path="res://world/entities/agent/assets/selected.png" id="1_200wr"]
+[ext_resource type="Script" path="res://world/entities/agent/agent_selector.gd" id="1_lg3o8"]
+
+[node name="AgentSelector" type="Sprite2D"]
+texture = ExtResource("1_200wr")
+script = ExtResource("1_lg3o8")

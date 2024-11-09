@@ -17,9 +17,13 @@ enum MapAction { SELECT_AGENT = 0, NAVIGATE_AGENT = 1, PLACE_AGENT = 2 }
 @export var cursor_navigate_texture: Texture2D
 @export var cursor_place_texture: Texture2D
 
+var agent_selector = preload("res://world/entities/agent/agent_selector.tscn").instantiate() as AgentSelector
+
 
 var selected_agent: MAPFAgent = null
 var current_action: MapAction = MapAction.SELECT_AGENT
+
+var agents: Array[Agent] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -53,7 +57,7 @@ func unhandled_mouse_button(event: InputEventMouseButton) -> void:
 		add_agent_at_tile(get_global_mouse_tile_position())
 	if current_action == MapAction.NAVIGATE_AGENT:
 		selected_agent.set_target_cell(get_global_mouse_tile_position())
-		_set_current_action(MapAction.SELECT_AGENT)
+		unselect_agent()
 
 func _on_agent_pressed(agent: Agent) -> void:
 	if current_action != MapAction.SELECT_AGENT:
@@ -63,10 +67,12 @@ func _on_agent_pressed(agent: Agent) -> void:
 func unselect_agent() -> void:
 	_set_current_action(MapAction.SELECT_AGENT)
 	selected_agent = null
+	agent_selector.assign_agent(null)
 
 func select_agent(agent: Agent) -> void:
 	_set_current_action(MapAction.NAVIGATE_AGENT)
 	selected_agent = agent
+	agent_selector.assign_agent(selected_agent)
 
 func _on_mapf_map_map_changed() -> void:
 	fit_camera_to_scene()
@@ -89,34 +95,31 @@ func fit_camera_to_scene() -> void:
 
 func add_agent_at_tile(cell: Vector2i) -> void:
 	var agent = agent_scene.instantiate() as Agent
-	agent.color = Color(clampf(randf(), 0.2, 0.8), clampf(randf(), 0.2, 0.8), clampf(randf(), 0.2, 0.8))
+	agent.name = str(agents.size())
 	
 	agent.set_cell(cell)
 	agent.set_cell_size(mapf_map.get_tile_set().tile_size)
 	agent.set_target_cell(cell)
+	agent.pressed.connect(func(): _on_agent_pressed(agent))
+	agent.z_index = 10
 	mapf_map.add_child(agent)
 	agent_added.emit(agent)
 	
 	var agent_path = agent_path_scene.instantiate() as AgentPath
 	agent_path.assigned_agent = agent
-	agent_path.z_index = 2
+	agent_path.z_index = 0
 	mapf_map.add_child(agent_path)
 	
 	var agent_target = agent_path_target_scene.instantiate() as TargetLocation
-	agent_target.color = agent.color
+	agent_target.modulate = agent.body.modulate
+	agent_target.z_index = 9
 	agent_target.hide()
 	mapf_map.add_child(agent_target)
+	agent_target.assign_agent(agent)
 	
-	agent.pressed.connect(func(): _on_agent_pressed(agent))
-	agent.target_changed.connect(func(target: Vector2i): _on_agent_target_changed(agent, agent_target))
-	
-	selected_agent = agent
+	select_agent(agent)
+	agents.push_back(agent)
 	_set_current_action(MapAction.NAVIGATE_AGENT)
-	
-func _on_agent_target_changed(agent: Agent, target: TargetLocation):
-	var target_position = (Vector2(agent.target_cell) + Vector2(0.5, 0.5)) * Vector2(agent.cell_size)
-	target.position = target_position
-	target.show()
 
 func load_map(path: String) -> void:
 	mapf_map.load_map(path)
