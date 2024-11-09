@@ -33,7 +33,7 @@ func register_agent(agent: Agent, name: String) -> void:
 	agent_select.select(agents.size() - 1)
 	register_camera(agent.camera, name)
 	
-func unregister_agent(agent: Agent, name: String) -> void:
+func unregister_agent(agent: Agent) -> void:
 	var agent_index = agents.find(agent)
 	agents.remove_at(agent_index)
 	agent_select.remove_item(agent_index)

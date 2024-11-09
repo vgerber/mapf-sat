@@ -3,16 +3,15 @@ extends HBoxContainer
 
 signal map_selected(map_file: String)
 
-var maps: Array[String] = []
+var maps: Array = []
 @onready var option_control = $MapOptionBtn
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	maps = load_all_maps("res://assets/maps")
-	var map_names = maps.map(get_map_name)
-	map_names.sort()
-	for map_name in map_names:
-		option_control.add_item(map_name)	
+	maps = load_all_maps("res://assets/maps").map(func(map_path: String) -> Dictionary: return { "path": map_path, "name": get_map_name(map_path) })
+	maps.sort_custom(func(map_a: Dictionary, map_b: Dictionary): return map_a["name"] < map_b["name"])
+	for map in maps:
+		option_control.add_item(map["name"])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,7 +41,7 @@ func load_all_maps(path: String) -> Array[String]:
 
 
 func _on_map_option_btn_item_selected(index: int) -> void:
-	map_selected.emit(maps[index])
+	map_selected.emit(maps[index]["path"])
 
 static func get_map_absolute_path(map_path: String) -> String:
 	if OS.has_feature("editor"):
