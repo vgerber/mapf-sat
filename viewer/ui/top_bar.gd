@@ -37,6 +37,10 @@ func unregister_agent(agent: Agent) -> void:
 	var agent_index = agents.find(agent)
 	agents.remove_at(agent_index)
 	agent_select.remove_item(agent_index)
+	# 0 is default camera
+	camera_select.remove_item(agent_index+1)
+	if camera_select.selected == -1:
+		camera_select.select(0)
 
 func _on_camera_select_btn_item_selected(index: int) -> void:
 	cameras[index].make_current()
