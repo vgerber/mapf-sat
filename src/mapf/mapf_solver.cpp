@@ -13,6 +13,8 @@ void MAPFSolver::register_agent(const MAPFAgentPtr agent) {
   agents.push_back(agent);
 }
 
+void MAPFSolver::clear_agents() { agents.clear(); }
+
 bool MAPFSolver::solve() {
   std::cout << "Solving for " << agents.size() << " Agents" << std::endl;
   auto time_solve_start = std::chrono::system_clock::now();

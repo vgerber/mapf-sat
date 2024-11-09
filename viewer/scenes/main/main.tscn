@@ -38,4 +38,5 @@ cursor_select_texture = ExtResource("4_5eudh")
 cursor_place_texture = ExtResource("6_k3n0d")
 
 [connection signal="add_agent" from="Control/TopBar" to="." method="_on_top_bar_add_agent"]
+[connection signal="map_selected" from="Control/TopBar" to="." method="_on_top_bar_map_selected"]
 [connection signal="solve_click" from="Control/TopBar" to="." method="_on_top_bar_solve_click"]

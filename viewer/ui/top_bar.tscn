@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cf06cvn5bvnmc"]
+[gd_scene load_steps=3 format=3 uid="uid://cf06cvn5bvnmc"]
 
 [ext_resource type="Script" path="res://ui/top_bar.gd" id="1_jvbnu"]
+[ext_resource type="PackedScene" uid="uid://b1wb4l4p2sfg4" path="res://ui/map_selector.tscn" id="2_ajv50"]
 
 [node name="TopBar" type="PanelContainer"]
 anchors_preset = 10
@@ -20,6 +21,10 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 2
+
+[node name="MapSelector" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_ajv50")]
+layout_mode = 2
+size_flags_vertical = 1
 
 [node name="Agent" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -45,5 +50,6 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Solve"
 
+[connection signal="map_selected" from="MarginContainer/HBoxContainer/MapSelector" to="." method="_on_map_selector_map_selected"]
 [connection signal="item_selected" from="MarginContainer/HBoxContainer/CameraSelectBtn" to="." method="_on_camera_select_btn_item_selected"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/SolveBtn" to="." method="_on_solve_btn_pressed"]

@@ -20,6 +20,8 @@ MAPFSolver::~MAPFSolver() {}
 
 void MAPFSolver::set_map(MAPFMap *map) {
   solver.set_graph(mapf::map_to_graph(map->get_map_handle()));
+  agents.clear();
+  solver.clear_agents();
 }
 
 void MAPFSolver::add_agent(MAPFAgent *agent) {

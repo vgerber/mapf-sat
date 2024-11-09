@@ -59,7 +59,7 @@ void MAPFAgent::set_cell_size(const Vector2i &cell_size) {
 
 void MAPFAgent::reset_path_state() {
   path_index = 0;
-  emit_signal(SIGNAL_PATH_INDEX_CHANGED);
+  emit_signal(SIGNAL_PATH_INDEX_CHANGED, path_index);
 }
 
 size_t MAPFAgent::get_path_length() const { return agent->path.size(); }

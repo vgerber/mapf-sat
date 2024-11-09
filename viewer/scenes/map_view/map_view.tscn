@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/map_view/map_view.gd" id="1_780yg"]
 [ext_resource type="Texture2D" uid="uid://du5i6kvvnvs46" path="res://assets/cursor/cursor_add.png" id="2_yo7be"]
-[ext_resource type="TileSet" uid="uid://cl5aiqaux0fmj" path="res://assets/ground_tileset.tres" id="3_07wj1"]
 [ext_resource type="Texture2D" uid="uid://nc58km6vhosm" path="res://assets/cursor/cursor_navigate.png" id="3_kqm2o"]
 [ext_resource type="Texture2D" uid="uid://bnqr6gxw6qj0a" path="res://assets/cursor/cursor_select.png" id="3_tkrye"]
+[ext_resource type="TileSet" uid="uid://cl5aiqaux0fmj" path="res://assets/ground_tileset.tres" id="5_gcdgw"]
 
 [node name="MapView" type="Node"]
 script = ExtResource("1_780yg")
@@ -13,7 +13,9 @@ cursor_navigate_texture = ExtResource("3_kqm2o")
 cursor_place_texture = ExtResource("3_tkrye")
 
 [node name="MAPFMap" type="MAPFMap" parent="."]
-tile_set = ExtResource("3_07wj1")
+tile_set = ExtResource("5_gcdgw")
+
+[node name="Agents" type="Node" parent="MAPFMap"]
 
 [node name="CursorPosition" type="Sprite2D" parent="."]
 texture = ExtResource("3_tkrye")

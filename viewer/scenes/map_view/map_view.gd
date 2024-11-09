@@ -2,6 +2,7 @@ class_name MapView
 extends Node
 
 signal agent_added(agent: Agent)
+signal agent_removed(agent: Agent)
 
 const agent_scene = preload("res://world/entities/agent/agent.tscn")
 const agent_path_scene = preload("res://world/entities/agent/agent_path.tscn")
@@ -12,6 +13,7 @@ enum MapAction { SELECT_AGENT = 0, NAVIGATE_AGENT = 1, PLACE_AGENT = 2 }
 @onready var mapf_map = $MAPFMap
 @onready var camera = $FreeCamera
 @onready var cursor_rect = $CursorPosition
+@onready var agents_node = $MAPFMap/Agents
 
 @export var cursor_select_texture: Texture2D
 @export var cursor_navigate_texture: Texture2D
@@ -24,6 +26,7 @@ var selected_agent: MAPFAgent = null
 var current_action: MapAction = MapAction.SELECT_AGENT
 
 var agents: Array[Agent] = []
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -102,19 +105,19 @@ func add_agent_at_tile(cell: Vector2i) -> void:
 	agent.set_target_cell(cell)
 	agent.pressed.connect(func(): _on_agent_pressed(agent))
 	agent.z_index = 10
-	mapf_map.add_child(agent)
+	agents_node.add_child(agent)
 	agent_added.emit(agent)
 	
 	var agent_path = agent_path_scene.instantiate() as AgentPath
 	agent_path.assigned_agent = agent
 	agent_path.z_index = 0
-	mapf_map.add_child(agent_path)
+	agents_node.add_child(agent_path)
 	
 	var agent_target = agent_path_target_scene.instantiate() as TargetLocation
 	agent_target.modulate = agent.body.modulate
 	agent_target.z_index = 9
 	agent_target.hide()
-	mapf_map.add_child(agent_target)
+	agents_node.add_child(agent_target)
 	agent_target.assign_agent(agent)
 	
 	select_agent(agent)
@@ -122,6 +125,17 @@ func add_agent_at_tile(cell: Vector2i) -> void:
 	_set_current_action(MapAction.NAVIGATE_AGENT)
 
 func load_map(path: String) -> void:
+	
+	for agent in agents:
+		agents_node.remove_child(agent)
+		agent_removed.emit(agent)
+	agents.clear()
+	
+	# Remove agent util nodes
+	while agents_node.get_child_count() > 0:
+		agents_node.remove_child(agents_node.get_child(0))
+	unselect_agent()
+	
 	mapf_map.load_map(path)
 	fit_camera_to_scene()
 

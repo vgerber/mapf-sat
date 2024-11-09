@@ -56,6 +56,7 @@ public:
   void set_graph(const GraphPtr graph);
 
   void register_agent(const MAPFAgentPtr agent);
+  void clear_agents();
 
   bool solve();
 

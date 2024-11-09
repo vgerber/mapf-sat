@@ -13,7 +13,4 @@ func _on_agent_target_changed(target: Vector2i, cell_size: Vector2i) -> void:
 	show()
 	
 func _on_agent_path_changed(agent: Agent):
-	if agent.get_current_path_index() == max(0, agent.get_path_length()-1):
-		hide()
-		return
-	show()
+	visible = agent.get_current_path_index() == max(0, agent.get_path_length()-1)

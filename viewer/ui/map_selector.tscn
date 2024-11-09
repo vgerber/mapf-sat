@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1wb4l4p2sfg4"]
+
+[ext_resource type="Script" path="res://ui/map_selector.gd" id="1_nw328"]
+
+[node name="MapSelector" type="HBoxContainer"]
+offset_right = 78.0
+offset_bottom = 47.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_nw328")
+
+[node name="MapsNameLbl" type="Label" parent="."]
+layout_mode = 2
+text = "Maps"
+
+[node name="MapOptionBtn" type="OptionButton" parent="."]
+layout_mode = 2
+
+[connection signal="item_selected" from="MapOptionBtn" to="." method="_on_map_option_btn_item_selected"]
