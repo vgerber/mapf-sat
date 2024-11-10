@@ -36,7 +36,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="Control/HBoxContainer/SubViewportContainer"]
 handle_input_locally = false
 physics_object_picking = true
-size = Vector2i(1026, 607)
+size = Vector2i(820, 607)
 render_target_update_mode = 4
 
 [node name="MapView" parent="Control/HBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_e5y7j")]
@@ -47,11 +47,11 @@ cursor_place_texture = ExtResource("6_k3n0d")
 layout_mode = 2
 
 [connection signal="add_agent" from="Control/TopBar" to="." method="_on_top_bar_add_agent"]
+[connection signal="load_config" from="Control/TopBar" to="." method="_on_top_bar_load_config"]
 [connection signal="map_selected" from="Control/TopBar" to="." method="_on_top_bar_map_selected"]
+[connection signal="save_config" from="Control/TopBar" to="." method="_on_top_bar_save_config"]
 [connection signal="show_presets_changed" from="Control/TopBar" to="." method="_on_top_bar_show_presets_changed"]
 [connection signal="solve_click" from="Control/TopBar" to="." method="_on_top_bar_solve_click"]
 [connection signal="add_preset" from="Control/HBoxContainer/PresetsList" to="." method="_on_presets_list_add_preset"]
-[connection signal="load_config" from="Control/HBoxContainer/PresetsList" to="." method="_on_presets_list_load_config"]
 [connection signal="load_preset" from="Control/HBoxContainer/PresetsList" to="." method="_on_presets_list_load_preset"]
 [connection signal="remove_preset" from="Control/HBoxContainer/PresetsList" to="." method="_on_presets_list_remove_preset"]
-[connection signal="save_config" from="Control/HBoxContainer/PresetsList" to="." method="_on_presets_list_save_config"]

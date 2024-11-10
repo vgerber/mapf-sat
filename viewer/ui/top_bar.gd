@@ -5,21 +5,45 @@ signal add_agent
 signal map_selected(map_file_path: String)
 signal show_presets_changed(show: bool)
 
+signal load_config(config_path: String)
+signal save_config(config_path: String)
+
 var cameras: Array[Camera2D] = []
 var agents: Array[Agent] = []
 
 @onready var camera_select = $MarginContainer/HBoxContainer/CameraSelectBtn
 @onready var agent_select = $MarginContainer/HBoxContainer/AgentSelectBtn
 @onready var add_agent_btn = $MarginContainer/HBoxContainer/AddAgentBtn
-
+@onready var config_menu_btn = $MarginContainer/HBoxContainer/ConfigMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_agent_btn.pressed.connect(func(): add_agent.emit())
+	
+	var config_menu: PopupMenu = config_menu_btn.get_popup()
+	config_menu.add_item("Save...", 0)
+	config_menu.add_item("Load...", 1)
+	config_menu.id_pressed.connect(_on_config_menu_id_pressed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _on_config_menu_id_pressed(id: int) -> void:
+	if id == 0:
+		var file_dialog = FileDialog.new()
+		file_dialog.add_filter("*.json", "JSON")
+		file_dialog.use_native_dialog = true
+		file_dialog.file_selected.connect(func(file_path): save_config.emit(file_path))
+		file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+		file_dialog.show()
+	elif id == 1:
+		var file_dialog = FileDialog.new()
+		file_dialog.add_filter("*.json", "JSON")
+		file_dialog.use_native_dialog = true
+		file_dialog.file_selected.connect(func(file_path): load_config.emit(file_path))
+		file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
+		file_dialog.show()
 
 func register_camera(camera: Camera2D, name: String) -> void:
 	cameras.push_back(camera)

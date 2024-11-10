@@ -3,8 +3,7 @@ extends PanelContainer
 signal add_preset(preset_name: String)
 signal load_preset(preset: MAPFConfig.ConfigPreset)
 signal remove_preset(preset: MAPFConfig.ConfigPreset)
-signal load_config(config_path: String)
-signal save_config(config_path: String)
+
 
 @onready var preset_name_txt = $Margin/VBox/AddContainer/PresetNameTxt
 @onready var preset_list = $Margin/VBox/PresetList
@@ -47,20 +46,3 @@ func _on_add_preset_btn_pressed() -> void:
 		return
 	print("Adding preset " + text)
 	add_preset.emit(text)
-
-
-func _on_save_config_btn_pressed() -> void:
-	var file_dialog = FileDialog.new()
-	file_dialog.add_filter("*.json", "JSON")
-	file_dialog.use_native_dialog = true
-	file_dialog.file_selected.connect(func(file_path): save_config.emit(file_path))
-	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
-	file_dialog.show()
-
-func _on_load_config_btn_pressed() -> void:
-	var file_dialog = FileDialog.new()
-	file_dialog.add_filter("*.json", "JSON")
-	file_dialog.use_native_dialog = true
-	file_dialog.file_selected.connect(func(file_path): load_config.emit(file_path))
-	file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
-	file_dialog.show()

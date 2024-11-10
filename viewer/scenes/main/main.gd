@@ -49,21 +49,6 @@ func _on_presets_list_add_preset(preset_name: String) -> void:
 
 	config.presets.push_back(preset)
 	preset_list.add_preset_to_list(preset)
-	
-
-func _on_presets_list_save_config(config_path: String) -> void:
-	print("Save to " + config_path)
-	FileAccess.open(config_path, FileAccess.WRITE).store_string(JSON.stringify(config.to_dict()))
-
-func reload_presets():
-	preset_list.clear_preset_list()
-	for preset in config.presets:
-		preset_list.add_preset_to_list(preset)
-
-func _on_presets_list_load_config(config_path: String) -> void:
-	print("Load from " + config_path)
-	config = MAPFConfig.from_dict(JSON.parse_string(FileAccess.open(config_path, FileAccess.READ).get_as_text()))
-	reload_presets()
 
 
 func _on_presets_list_load_preset(preset: MAPFConfig.ConfigPreset) -> void:
@@ -71,7 +56,22 @@ func _on_presets_list_load_preset(preset: MAPFConfig.ConfigPreset) -> void:
 	for agent in preset.agents:
 		map_view.add_agent_at_tile(Vector2i(agent.x, agent.y), Vector2i(agent.target_x, agent.target_y))
 
+func reload_presets():
+	preset_list.clear_preset_list()
+	for preset in config.presets:
+		preset_list.add_preset_to_list(preset)
 
 func _on_presets_list_remove_preset(preset: MAPFConfig.ConfigPreset) -> void:
 	config.presets.remove_at(config.presets.find(preset))
 	reload_presets()
+
+
+func _on_top_bar_load_config(config_path: String) -> void:
+	print("Load from " + config_path)
+	config = MAPFConfig.from_dict(JSON.parse_string(FileAccess.open(config_path, FileAccess.READ).get_as_text()))
+	reload_presets()
+
+
+func _on_top_bar_save_config(config_path: String) -> void:
+	print("Save to " + config_path)
+	FileAccess.open(config_path, FileAccess.WRITE).store_string(JSON.stringify(config.to_dict()))
