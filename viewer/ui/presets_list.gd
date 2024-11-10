@@ -28,12 +28,20 @@ func add_preset_to_list(preset: MAPFConfig.ConfigPreset) -> void:
 	preset_list.add_child(label)
 	
 	var remove_btn = Button.new()
-	remove_btn.text = "Remove"
+	remove_btn.tooltip_text = "Remove"
+	remove_btn.icon = preload("res://ui/assets/icons/cross_16.png")
+	remove_btn.custom_minimum_size = Vector2i(40, 40)
+	remove_btn.modulate = Color(0.708, 0.708, 0.708)
+	remove_btn.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	remove_btn.pressed.connect(func(): remove_preset.emit(preset))
 	preset_list.add_child(remove_btn)
 	
 	var load_btn = Button.new()
-	load_btn.text = "Load"
+	load_btn.tooltip_text = "Load"
+	load_btn.icon = preload("res://ui/assets/icons/upload_16.png")
+	load_btn.custom_minimum_size = Vector2i(40, 40)
+	load_btn.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	load_btn.modulate = Color(0.708, 0.708, 0.708)
 	load_btn.pressed.connect(func(): load_preset.emit(preset))
 	preset_list.add_child(load_btn)
 	

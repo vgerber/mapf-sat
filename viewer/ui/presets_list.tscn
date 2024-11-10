@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://mdi8lidanwuv"]
+[gd_scene load_steps=3 format=3 uid="uid://mdi8lidanwuv"]
 
 [ext_resource type="Script" path="res://ui/presets_list.gd" id="1_rqawt"]
+[ext_resource type="Texture2D" uid="uid://buf8fwb8elbhb" path="res://ui/assets/icons/add_16.png" id="2_ax3od"]
 
 [node name="PresetsList" type="PanelContainer"]
 anchors_preset = 9
@@ -35,7 +36,11 @@ size_flags_horizontal = 3
 placeholder_text = "Preset name"
 
 [node name="AddPresetBtn" type="Button" parent="Margin/VBox/AddContainer"]
+modulate = Color(0.707967, 0.707966, 0.707966, 1)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-text = "Add preset"
+tooltip_text = "Add preset"
+icon = ExtResource("2_ax3od")
+icon_alignment = 1
 
 [connection signal="pressed" from="Margin/VBox/AddContainer/AddPresetBtn" to="." method="_on_add_preset_btn_pressed"]
