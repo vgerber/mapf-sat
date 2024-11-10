@@ -26,6 +26,7 @@ var selected_agent: MAPFAgent = null
 var current_action: MapAction = MapAction.SELECT_AGENT
 
 var agents: Array[Agent] = []
+var loaded_map_path: String = ""
 
 
 # Called when the node enters the scene tree for the first time.
@@ -57,7 +58,7 @@ func unhandled_mouse_button(event: InputEventMouseButton) -> void:
 	cursor_rect.position = get_global_mouse_tile_position() * tile_size
 	
 	if current_action == MapAction.PLACE_AGENT:
-		add_agent_at_tile(get_global_mouse_tile_position())
+		add_agent_at_tile(get_global_mouse_tile_position(), get_global_mouse_tile_position())
 	if current_action == MapAction.NAVIGATE_AGENT:
 		selected_agent.set_target_cell(get_global_mouse_tile_position())
 		unselect_agent()
@@ -96,13 +97,13 @@ func fit_camera_to_scene() -> void:
 	var zoom = min(float(window_size.x) / map_size_px.x, float(window_size.y) / map_size_px.y)
 	camera.zoom = Vector2(zoom, zoom)
 
-func add_agent_at_tile(cell: Vector2i) -> void:
+func add_agent_at_tile(cell: Vector2i, target_cell: Vector2i) -> void:
 	var agent = agent_scene.instantiate() as Agent
 	agent.name = str(agents.size())
 	
 	agent.set_cell(cell)
+	agent.set_target_cell(target_cell)
 	agent.set_cell_size(mapf_map.get_tile_set().tile_size)
-	agent.set_target_cell(cell)
 	agent.pressed.connect(func(): _on_agent_pressed(agent))
 	agent.z_index = 10
 	agents_node.add_child(agent)
@@ -125,7 +126,7 @@ func add_agent_at_tile(cell: Vector2i) -> void:
 	_set_current_action(MapAction.NAVIGATE_AGENT)
 
 func load_map(path: String) -> void:
-	
+	loaded_map_path = path
 	for agent in agents:
 		agents_node.remove_child(agent)
 		agent_removed.emit(agent)

@@ -11,8 +11,11 @@ namespace godot {
 
 void MAPFAgent::_bind_methods() {
   ClassDB::bind_method(D_METHOD("set_cell", "cell"), &MAPFAgent::set_cell);
+  ClassDB::bind_method(D_METHOD("get_cell"), &MAPFAgent::get_cell);
   ClassDB::bind_method(D_METHOD("set_cell_size", "size"),
                        &MAPFAgent::set_cell_size);
+  ADD_PROPERTY(PropertyInfo(Variant::VECTOR2I, "cell"), "set_cell", "get_cell");
+
   ClassDB::bind_method(D_METHOD("set_target_cell", "cell"),
                        &MAPFAgent::set_target_cell);
   ClassDB::bind_method(D_METHOD("get_target_cell"),
@@ -26,6 +29,7 @@ void MAPFAgent::_bind_methods() {
                        &MAPFAgent::get_path_cell);
   ClassDB::bind_method(D_METHOD("get_current_path_index"),
                        &MAPFAgent::get_current_path_index);
+
   ADD_SIGNAL(MethodInfo(SIGNAL_PATH_CHANGED));
   ADD_SIGNAL(MethodInfo(SIGNAL_PATH_INDEX_CHANGED,
                         PropertyInfo(Variant::INT, "path_index")));
@@ -41,6 +45,8 @@ void MAPFAgent::set_cell(const Vector2i &cell) {
   agent->y = cell.y;
   set_position(Vector2i(agent->x, agent->y) * cell_size);
 }
+
+Vector2i MAPFAgent::get_cell() const { return Vector2i(agent->x, agent->y); }
 
 void MAPFAgent::set_target_cell(const Vector2i &cell) {
   agent->target_x = cell.x;

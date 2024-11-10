@@ -3,6 +3,7 @@ extends PanelContainer
 signal solve_click
 signal add_agent
 signal map_selected(map_file_path: String)
+signal show_presets_changed(show: bool)
 
 var cameras: Array[Camera2D] = []
 var agents: Array[Agent] = []
@@ -53,3 +54,7 @@ func _on_solve_btn_pressed() -> void:
 
 func _on_map_selector_map_selected(map_file: String) -> void:
 	map_selected.emit(map_file)
+
+
+func _on_show_presets_toggle_btn_toggled(toggled_on: bool) -> void:
+	show_presets_changed.emit(toggled_on)
