@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.1845025"
-     inkscape:cx="482.90316"
-     inkscape:cy="505.69754"
+     inkscape:zoom="7.9747367"
+     inkscape:cx="610.05149"
+     inkscape:cy="541.33449"
      inkscape:window-width="2560"
      inkscape:window-height="1337"
      inkscape:window-x="2560"
@@ -468,6 +468,28 @@
          transform="rotate(90)" />
     </g>
     <g
+       id="g6427-8"
+       inkscape:export-filename="/home/vincent/Development/Godot/mapf_sat/viewer/ui/assets/icons/add_16.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="matrix(0.50000003,0,0,0.50000003,67.340286,77.439608)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect6188-4"
+         width="8.4666662"
+         height="1.5875"
+         x="148.05441"
+         y="91.013351" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect6188-5-5"
+         width="8.4666662"
+         height="1.5875"
+         x="87.573769"
+         y="-153.0815"
+         transform="rotate(90)" />
+    </g>
+    <g
        id="g6427-9"
        inkscape:export-filename="/home/vincent/Development/Godot/mapf_sat/viewer/ui/assets/icons/cross.png"
        inkscape:export-xdpi="96"
@@ -530,6 +552,133 @@
            y="213.17282"
            transform="rotate(-45)" />
       </g>
+    </g>
+    <g
+       id="g6427-9-3"
+       inkscape:export-filename="/home/vincent/Development/Godot/mapf_sat/viewer/ui/assets/icons/cross_16.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="rotate(45,94.061801,119.56691)">
+      <g
+         id="g7250"
+         transform="matrix(0.6698906,0,0,0.6698906,40.477834,20.331359)">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect6188-2-6"
+           width="8.4666662"
+           height="1.5875"
+           x="148.05441"
+           y="91.013351" />
+        <g
+           id="g7245">
+          <rect
+             style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+             id="rect6188-5-2-1"
+             width="8.4666662"
+             height="1.5875"
+             x="87.573769"
+             y="-153.0815"
+             transform="rotate(90)" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g7060-2"
+       transform="matrix(0,-0.56250003,0.56250003,0,97.575761,226.68595)"
+       inkscape:export-filename="/home/vincent/Development/Godot/mapf_sat/viewer/ui/assets/icons/upload_16.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect6732-93"
+         width="1.5875"
+         height="8.4666662"
+         x="171.73552"
+         y="110.90817" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+         id="rect6732-8-1"
+         width="1.5875"
+         height="6.0367379"
+         x="114.34776"
+         y="-178.06157"
+         transform="rotate(90)" />
+      <g
+         id="g7053-9"
+         transform="rotate(90,183.26154,116.83748)">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect6732-9-4"
+           width="1.5875"
+           height="3.96875"
+           x="213.17282"
+           y="-43.599667"
+           transform="rotate(45)" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+           id="rect6732-7-7"
+           width="1.5875"
+           height="3.96875"
+           x="42.012165"
+           y="213.17282"
+           transform="rotate(-45)" />
+      </g>
+    </g>
+    <g
+       id="g7747">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.33684;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7361"
+         width="7.1298256"
+         height="7.1298256"
+         x="150.42989"
+         y="138.39035" />
+      <circle
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path7619"
+         cx="153.9948"
+         cy="141.95526"
+         r="1.4641821" />
+    </g>
+    <g
+       id="g7747-0"
+       transform="matrix(0.50000006,0,0,0.50000006,87.869182,71.294934)"
+       inkscape:export-filename="/home/vincent/Development/Godot/mapf_sat/viewer/ui/assets/icons/preset.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.33684;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7361-3"
+         width="7.1298256"
+         height="7.1298256"
+         x="150.42989"
+         y="138.39035" />
+      <circle
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path7619-6"
+         cx="153.9948"
+         cy="141.95526"
+         r="1.4641821" />
+    </g>
+    <g
+       id="g7747-0-1"
+       transform="matrix(0.62500008,0,0,0.62500008,79.22836,52.747634)"
+       inkscape:export-filename="/home/vincent/Development/Godot/mapf_sat/viewer/ui/assets/icons/preset_20.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.33684;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7361-3-0"
+         width="7.1298256"
+         height="7.1298256"
+         x="150.42989"
+         y="138.39035" />
+      <circle
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path7619-6-6"
+         cx="153.9948"
+         cy="141.95526"
+         r="1.4641821" />
     </g>
   </g>
 </svg>
