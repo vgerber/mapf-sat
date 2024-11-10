@@ -1,6 +1,6 @@
 # Multi-Agent path finding with SAT
 
-This project demonstrates the use of SAT solvers to schedule path finding in multi agents systems.
+This project demonstrates the use of SAT solvers to schedule path finding in multi agent systems.
 The implementation is based on [Efficient SAT Approach to Multi-Agent Path Finding
 under the Sum of Costs Objective](http://surynek.net/publications/files/Surynek-Felner-Stern-Boyarski_Efficient-Cost-Encoding_WoMAPF-2016.pdf)
 
