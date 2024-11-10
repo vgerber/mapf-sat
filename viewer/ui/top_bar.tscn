@@ -34,18 +34,12 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 toggle_mode = true
+button_pressed = true
 text = "Presets"
 
 [node name="MapSelector" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_ajv50")]
 layout_mode = 2
 size_flags_vertical = 1
-
-[node name="Agent" type="Label" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "Agent"
-
-[node name="AgentSelectBtn" type="OptionButton" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
 
 [node name="AddAgentBtn" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)

@@ -11,15 +11,17 @@ var solver = MAPFSolver.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#mapf_map.load_map("/home/vincent/Development/Godot/gdextension_test/demo/assets/pssai/mouse1.map")
-	map_view.load_map(MapSelector.get_map_absolute_path("res://assets/maps/basic/mouse1.map")) as MapView
-	solver.set_map(map_view.mapf_map)
+	var map_path = "res://assets/maps/basic/mouse1.map"
+	top_bar.select_map(map_path)
+	load_map(map_path)
+	
 	
 	map_view.agent_added.connect(_on_agent_added)
 	map_view.agent_removed.connect(top_bar.unregister_agent)
 	
 	top_bar.register_camera(map_view.camera, "Free")
 	
+	preset_list.visible = top_bar.preset_list_visible_btn_toggled()
 
 
 func _on_top_bar_solve_click() -> void:
@@ -32,10 +34,12 @@ func _on_agent_added(agent: Agent) -> void:
 func _on_top_bar_add_agent() -> void:
 	map_view.switch_to_place_agent_action()
 
-
-func _on_top_bar_map_selected(map_file_path: String) -> void:
+func load_map(map_file_path: String) -> void:
 	map_view.load_map(MapSelector.get_map_absolute_path(map_file_path))
 	solver.set_map(map_view.mapf_map)
+
+func _on_top_bar_map_selected(map_file_path: String) -> void:
+	load_map(map_file_path)
 
 
 func _on_top_bar_show_presets_changed(show: bool) -> void:
@@ -52,7 +56,8 @@ func _on_presets_list_add_preset(preset_name: String) -> void:
 
 
 func _on_presets_list_load_preset(preset: MAPFConfig.ConfigPreset) -> void:
-	map_view.load_map(preset.map_path)
+	top_bar.select_map(preset.map_path)
+	load_map(preset.map_path)
 	for agent in preset.agents:
 		map_view.add_agent_at_tile(Vector2i(agent.x, agent.y), Vector2i(agent.target_x, agent.target_y))
 

@@ -18,6 +18,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _find_by_name(map_name: String) -> int:
+	for map_index in range(maps.size()):
+		if maps[map_index]["name"] == map_name:
+			return map_index
+	return -1
+	
+func select_by_name(map_name: String) -> void:
+	option_control.select(_find_by_name(map_name))
+
 func get_map_name(map_file_path: String) -> String:
 	var map_name_parts = map_file_path.split("/")
 	return map_name_parts [map_name_parts.size()-1].replace(".map","")

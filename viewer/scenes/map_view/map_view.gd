@@ -88,6 +88,11 @@ func get_global_mouse_tile_position() -> Vector2i:
 		
 func fit_camera_to_scene() -> void:
 	var map_size = mapf_map.get_used_rect().size
+	if map_size.x == 0 or map_size.y == 0:
+		printerr("Map size is zero")
+		return
+	
+	
 	var tile_size = mapf_map.get_tile_set().tile_size
 	var map_size_px = map_size * tile_size
 	camera.position = map_size_px / 2 + mapf_map.get_used_rect().position * tile_size

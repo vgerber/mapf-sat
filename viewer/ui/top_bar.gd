@@ -12,9 +12,10 @@ var cameras: Array[Camera2D] = []
 var agents: Array[Agent] = []
 
 @onready var camera_select = $MarginContainer/HBoxContainer/CameraSelectBtn
-@onready var agent_select = $MarginContainer/HBoxContainer/AgentSelectBtn
 @onready var add_agent_btn = $MarginContainer/HBoxContainer/AddAgentBtn
 @onready var config_menu_btn = $MarginContainer/HBoxContainer/ConfigMenu
+@onready var show_presets_toggle_btn = $MarginContainer/HBoxContainer/ShowPresetsToggleBtn
+@onready var map_selector = $MarginContainer/HBoxContainer/MapSelector
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -54,14 +55,11 @@ func register_camera(camera: Camera2D, name: String) -> void:
 
 func register_agent(agent: Agent, name: String) -> void:
 	agents.push_back(agent)
-	agent_select.add_item(name)
-	agent_select.select(agents.size() - 1)
 	register_camera(agent.camera, name)
 	
 func unregister_agent(agent: Agent) -> void:
 	var agent_index = agents.find(agent)
 	agents.remove_at(agent_index)
-	agent_select.remove_item(agent_index)
 	# 0 is default camera
 	camera_select.remove_item(agent_index+1)
 	if camera_select.selected == -1:
@@ -75,6 +73,8 @@ func _on_solve_btn_pressed() -> void:
 	print("Solve!")
 	solve_click.emit()
 
+func select_map(map_path: String) -> void:
+	map_selector.select_by_name(map_selector.get_map_name(map_path))
 
 func _on_map_selector_map_selected(map_file: String) -> void:
 	map_selected.emit(map_file)
@@ -82,3 +82,6 @@ func _on_map_selector_map_selected(map_file: String) -> void:
 
 func _on_show_presets_toggle_btn_toggled(toggled_on: bool) -> void:
 	show_presets_changed.emit(toggled_on)
+
+func preset_list_visible_btn_toggled() -> bool:
+	return show_presets_toggle_btn.button_pressed
